@@ -63,8 +63,8 @@ The `grid` class defines each *row* of the grid.
 * `grid--left`: Left align columns
 * `grid--right`: Right align columns
 * `grid--top`: Top align columns
-* `grid--bottom`: Bottom align columns
 * `grid--middle`: Vertically center columns
+* `grid--bottom`: Bottom align columns
 * `grid--stretch`: Stretch columns to the height of the grid element
 
 ### Columns
@@ -82,8 +82,8 @@ For example, `grid__col-6` will fill 6/12 or half of the space and `grid__col-12
 * `grid__col--left`: Left align the column
 * `grid__col--right`: Right align the column
 * `grid__col--top`: Top align the column
-* `grid__col--bottom`: Bottom align the column
 * `grid__col--middle`: Vertically center the column
+* `grid__col--bottom`: Bottom align the column
 * `grid__col--stretch`: Stretch the column to the height of the grid element
 * `grid__col--hidden`: Hide the column
 * `grid__col--visible`: Show the column
