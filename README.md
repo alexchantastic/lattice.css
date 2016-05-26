@@ -2,6 +2,8 @@
 
 Lattice is a responsive [flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes)-based CSS grid framework that utilizes [BEM](http://getbem.com/) naming conventions. Lattice is fully-featured and is built with customization in mind.
 
+[View Demo](https://alexchantastic.github.io/lattice.css/)
+
 ## Installation
 
 ## Usage
