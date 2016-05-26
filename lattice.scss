@@ -1,0 +1,235 @@
+/*! Lattice v0.0.1 | MIT License | https://github.com/alexchantastic/lattice.css */
+
+/* Variables
+   ========================================================================== */
+$lattice-breakpoint-md: 990px !default;
+$lattice-breakpoint-sm: 769px !default;
+$lattice-breakpoint-xs: 480px !default;
+
+$lattice-container-width-default: 1140px !default;
+$lattice-container-width-lg: $lattice-container-width-default !default;
+$lattice-container-width-md: 940px !default;
+$lattice-container-width-sm: 700px !default;
+$lattice-container-width-xs: 100% !default;
+
+$lattice-gutter-width-default: 10px !default;
+$lattice-gutter-width-lg: $lattice-gutter-width-default !default;
+$lattice-gutter-width-md: 8px !default;
+$lattice-gutter-width-sm: 5px !default;
+$lattice-gutter-width-xs: 5px !default;
+
+/**
+ * Mapping of all variables used within Lattice
+ * @var breakpoint      {length}            Viewport size to break at
+ * @var container-width {length|percentage} Width of .container at the given screen
+ * @var gutter-width    {length}            Space between each grid column as applied on both sides
+ */
+$lattice-map: (
+  default: (
+    container-width: $lattice-container-width-default,
+    gutter-width: $lattice-gutter-width-default,
+  ),
+  lg: (
+    container-width: $lattice-container-width-lg,
+    gutter-width: $lattice-gutter-width-lg,
+  ),
+  md: (
+    breakpoint: $lattice-breakpoint-md,
+    container-width: $lattice-container-width-md,
+    gutter-width: $lattice-gutter-width-md,
+  ),
+  sm: (
+    breakpoint: $lattice-breakpoint-sm,
+    container-width: $lattice-container-width-sm,
+    gutter-width: $lattice-gutter-width-sm,
+  ),
+  xs: (
+    breakpoint: $lattice-breakpoint-xs,
+    container-width: $lattice-container-width-xs,
+    gutter-width: $lattice-gutter-width-xs,
+  )
+);
+
+/* Mixins
+   ========================================================================== */
+/**
+ * Large screen media query
+ * @return Media query at large screen
+ */
+@mixin lattice-screen-lg {
+  @media (min-width: #{map-get(map-get($lattice-map, md), breakpoint) + 1 }) {
+    @content;
+  }
+}
+
+/**
+ * Medium screen media query
+ * @return Media query at medium screen
+ */
+@mixin lattice-screen-md {
+  @media (min-width: #{map-get(map-get($lattice-map, sm), breakpoint) - 1}) and
+         (max-width: map-get(map-get($lattice-map, md), breakpoint)) {
+    @content;
+  }
+}
+
+/**
+ * Small screen media query
+ * @return Media query at small screen
+ */
+@mixin lattice-screen-sm {
+  @media (min-width: #{map-get(map-get($lattice-map, xs), breakpoint) - 1}) and
+         (max-width: map-get(map-get($lattice-map, sm), breakpoint)) {
+    @content;
+  }
+}
+
+/**
+ * Xsmall screen media query
+ * @return Media query at xsmall screen
+ */
+@mixin lattice-screen-xs {
+  @media (max-width: map-get(map-get($lattice-map, xs), breakpoint)) {
+    @content;
+  }
+}
+
+/**
+ * Generate base styles
+ * @param {string} Breakpoint string value (lg, md, sm, xs)
+ * @return Base styles at the given breakpoint
+ */
+@mixin lattice-generate-base($breakpoint) {
+  .container {
+    max-width: map-get(map-get($lattice-map, $breakpoint), container-width);
+    padding-right: map-get(map-get($lattice-map, $breakpoint), gutter-width);
+    padding-left: map-get(map-get($lattice-map, $breakpoint), gutter-width);
+  }
+
+  .container--fluid { max-width: 100%; }
+
+  .grid {
+    margin-right: -#{map-get(map-get($lattice-map, $breakpoint), gutter-width)};
+    margin-left: -#{map-get(map-get($lattice-map, $breakpoint), gutter-width)};
+  }
+
+  [class*="grid__col-"] {
+    padding-right: map-get(map-get($lattice-map, $breakpoint), gutter-width);
+    padding-left: map-get(map-get($lattice-map, $breakpoint), gutter-width);
+  }
+}
+
+/**
+ * Generate grid styles
+ * @param {string} Breakpoint string value (lg, md, sm, xs)
+ * @return Grid styles at the given breakpoint
+ */
+@mixin lattice-generate-grid($breakpoint) {
+  $namespace: 'default';
+
+  @if $breakpoint == 'default' {
+    $namespace: '';
+  }
+  @else {
+    $namespace: $breakpoint + '-';
+  }
+
+  /* Grid level utilities */
+  // Grid alignment
+  .grid--#{$namespace}center { justify-content: center; }
+  .grid--#{$namespace}justify { justify-content: space-between; }
+  .grid--#{$namespace}left { justify-content: flex-start; }
+  .grid--#{$namespace}right { justify-content: flex-end; }
+  .grid--#{$namespace}top { align-items: flex-start; }
+  .grid--#{$namespace}bottom { align-items: flex-end; }
+  .grid--#{$namespace}middle { align-items: center; }
+  .grid--#{$namespace}stretch { align-items: stretch; }
+
+  /* Column level utilities */
+  // Column alignment
+  .grid__col--#{$namespace}left {
+    margin-right: auto;
+    margin-left: 0;
+  }
+  .grid__col--#{$namespace}right {
+    margin-right: 0;
+    margin-left: auto;
+  }
+  .grid__col--#{$namespace}top { align-self: flex-start; }
+  .grid__col--#{$namespace}bottom { align-self: flex-end; }
+  .grid__col--#{$namespace}middle { align-self: center; }
+  .grid__col--#{$namespace}stretch { align-self: stretch; }
+  .grid__col--#{$namespace}hidden { display: none; }
+  .grid__col--#{$namespace}visible { display: block; }
+
+  // Column ordering
+  @for $i from 1 through 12 {
+    .grid__col--#{$namespace}order-#{$i} { order: #{$i}; }
+  }
+  .grid__col--#{$namespace}order-first { order: -1; }
+  .grid__col--#{$namespace}order-last { order: 9999; }
+
+  // Column offsets
+  @for $i from 0 through 12 {
+    .grid__col--#{$namespace}offset-#{$i} { margin-left: #{$i / 12 * 100%}; }
+  }
+
+  @if $breakpoint == 'default' {
+    $namespace: '';
+  }
+  @else {
+    $namespace: '-' + $breakpoint;
+  }
+
+  // Column widths
+  @for $i from 1 through 12 {
+    .grid__col#{$namespace}-#{$i} { width: #{$i / 12 * 100%}; }    
+  }
+}
+
+/* Styles
+   ========================================================================== */
+.container,
+.grid,
+[class*="grid__col-"] {
+  box-sizing: border-box;
+}
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+// Generate styles for default screen
+@include lattice-generate-base('default');
+@include lattice-generate-grid('default');
+
+// Generate styles for large screen
+@include lattice-screen-lg {
+  @include lattice-generate-base('lg');
+  @include lattice-generate-grid('lg');
+}
+
+// Generate styles for medium screen
+@include lattice-screen-md {
+  @include lattice-generate-base('md');
+  @include lattice-generate-grid('md');
+}
+
+// Generate styles for small screen
+@include lattice-screen-sm {
+  @include lattice-generate-base('sm');
+  @include lattice-generate-grid('sm');
+}
+
+// Generate styles for xsmall screen
+@include lattice-screen-xs {
+  @include lattice-generate-base('xs');
+  @include lattice-generate-grid('xs');
+}
