@@ -4,7 +4,20 @@ Lattice is a responsive [flexbox](https://developer.mozilla.org/en-US/docs/Web/C
 
 [View Demo](https://alexchantastic.github.io/lattice.css/)
 
+## Table of Contents
+
+* [Installation](#installation)
+* [Usage](#usage)
+  * [Settings](#settings)
+  * [Container](#container)
+  * [Grid](#grid)
+  * [Columns](#columns)
+  * [Nesting](#nesting)
+  * [Responsive](#responsive)
+
 ## Installation
+
+Coming soon...
 
 ## Usage
 
