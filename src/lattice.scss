@@ -187,6 +187,16 @@ $lattice-map: (
   }
 }
 
+/**
+ * Generate Lattice styles
+ * @param {string} Breakpoint string value (lg, md, sm, xs)
+ * @return Lattice styles at the given breakpoint
+ */
+@mixin lattice-generate($breakpoint) {
+  @include lattice-generate-base($breakpoint);
+  @include lattice-generate-grid($breakpoint);
+}
+
 /* Styles
    ========================================================================== */
 .container,
@@ -212,29 +222,24 @@ $lattice-map: (
 }
 
 // Generate styles for default screen
-@include lattice-generate-base('default');
-@include lattice-generate-grid('default');
+@include lattice-generate('default');
 
 // Generate styles for large screen
 @include lattice-screen-lg {
-  @include lattice-generate-base('lg');
-  @include lattice-generate-grid('lg');
+  @include lattice-generate('lg');
 }
 
 // Generate styles for medium screen
 @include lattice-screen-md {
-  @include lattice-generate-base('md');
-  @include lattice-generate-grid('md');
+  @include lattice-generate('md');
 }
 
 // Generate styles for small screen
 @include lattice-screen-sm {
-  @include lattice-generate-base('sm');
-  @include lattice-generate-grid('sm');
+  @include lattice-generate('sm');
 }
 
 // Generate styles for xsmall screen
 @include lattice-screen-xs {
-  @include lattice-generate-base('xs');
-  @include lattice-generate-grid('xs');
+  @include lattice-generate('xs');
 }
