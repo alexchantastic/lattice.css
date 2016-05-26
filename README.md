@@ -141,8 +141,8 @@ For example, to center align all columns within a grid at the small breakpoint y
 * `grid--{namespace}-left`
 * `grid--{namespace}-right`
 * `grid--{namespace}-top`
-* `grid--{namespace}-bottom`
 * `grid--{namespace}-middle`
+* `grid--{namespace}-bottom`
 * `grid--{namespace}-stretch`
 
 #### Columns
@@ -150,8 +150,8 @@ For example, to center align all columns within a grid at the small breakpoint y
 * `grid__col--{namespace}-left`
 * `grid__col--{namespace}-right`
 * `grid__col--{namespace}-top`
-* `grid__col--{namespace}-bottom`
 * `grid__col--{namespace}-middle`
+* `grid__col--{namespace}-bottom`
 * `grid__col--{namespace}-stretch`
 * `grid__col--{namespace}-hidden`
 * `grid__col--{namespace}-visible`

@@ -2,21 +2,21 @@
 
 /* Variables
    ========================================================================== */
-$lattice-breakpoint-md: 990px !default;
-$lattice-breakpoint-sm: 769px !default;
-$lattice-breakpoint-xs: 480px !default;
+$lattice-breakpoint-md: 1199px !default;
+$lattice-breakpoint-sm: 991px !default;
+$lattice-breakpoint-xs: 767px !default;
 
-$lattice-container-width-default: 1140px !default;
+$lattice-container-width-default: 1170px !default;
 $lattice-container-width-lg: $lattice-container-width-default !default;
-$lattice-container-width-md: 940px !default;
-$lattice-container-width-sm: 700px !default;
+$lattice-container-width-md: 970px !default;
+$lattice-container-width-sm: 750px !default;
 $lattice-container-width-xs: 100% !default;
 
-$lattice-gutter-width-default: 10px !default;
+$lattice-gutter-width-default: 15px !default;
 $lattice-gutter-width-lg: $lattice-gutter-width-default !default;
-$lattice-gutter-width-md: 8px !default;
-$lattice-gutter-width-sm: 5px !default;
-$lattice-gutter-width-xs: 5px !default;
+$lattice-gutter-width-md: $lattice-gutter-width-default !default;
+$lattice-gutter-width-sm: $lattice-gutter-width-default !default;
+$lattice-gutter-width-xs: $lattice-gutter-width-default !default;
 
 /**
  * Mapping of all variables used within Lattice
