@@ -58,14 +58,14 @@ You can use the modifier class `container--fluid` to always have the container b
 
 The `grid` class defines each *row* of the grid.
 
-* `.grid--center`: Horizontally center columns
-* `.grid--justify`: Evenly space out columns
-* `.grid--left`: Left align columns
-* `.grid--right`: Right align columns
-* `.grid--top`: Top align columns
-* `.grid--bottom`: Bottom align columns
-* `.grid--middle`: Vertically center columns
-* `.grid--stretch`: Stretch columns to the height of the grid element
+* `grid--center`: Horizontally center columns
+* `grid--justify`: Evenly space out columns
+* `grid--left`: Left align columns
+* `grid--right`: Right align columns
+* `grid--top`: Top align columns
+* `grid--bottom`: Bottom align columns
+* `grid--middle`: Vertically center columns
+* `grid--stretch`: Stretch columns to the height of the grid element
 
 ### Columns
 
@@ -73,22 +73,24 @@ The `grid` class defines each *row* of the grid.
 <div class="grid__col-{number}"></div>
 ```
 
-The `grid__col-{number}` class defines each *column* of the grid. Column widths can be set by using a between 1 and 12.
+Lattice is based on a 12 column layout so the total number of column width values should ideally add up to 12.
+
+The `grid__col-{number}` class defines each *column* of the grid. Column widths can be set by using a number between 1 and 12.
 
 For example, `grid__col-6` will fill 6/12 or half of the space and `grid__col-12` will fill 12/12 or 100% of the space.
 
-* `.grid__col--left`: Left align the column
-* `.grid__col--right`: Right align the column
-* `.grid__col--top`: Top align the column
-* `.grid__col--bottom`: Bottom align the column
-* `.grid__col--middle`: Vertically center the column
-* `.grid__col--stretch`: Stretch the column to the height of the grid element
-* `.grid__col--hidden`: Hide the column
-* `.grid__col--visible`: Show the column
-* `.grid__col--order-{number}`: Re-order the column based on the `{number}` specified (between 1 and 12)
-* `.grid__col--order-first`: Place the column as the first element irrespective of source order
-* `.grid__col--order-last`: Place the column as the last element irrespective of source order
-* `.grid__col--offset-{number}`: Offset the column based on the `{number}` specified (between 0 and 12)
+* `grid__col--left`: Left align the column
+* `grid__col--right`: Right align the column
+* `grid__col--top`: Top align the column
+* `grid__col--bottom`: Bottom align the column
+* `grid__col--middle`: Vertically center the column
+* `grid__col--stretch`: Stretch the column to the height of the grid element
+* `grid__col--hidden`: Hide the column
+* `grid__col--visible`: Show the column
+* `grid__col--order-{number}`: Re-order the column based on the `{number}` specified (between 1 and 12)
+* `grid__col--order-first`: Place the column as the first element irrespective of source order
+* `grid__col--order-last`: Place the column as the last element irrespective of source order
+* `grid__col--offset-{number}`: Offset the column based on the `{number}` specified (between 0 and 12)
 
 ### Nesting
 
@@ -126,7 +128,7 @@ Grids can be nested within one another like so:
 </div>
 ```
 
-All grid and column classes have a responsive counterpart based off of the `lg`, `md`, `sm`, and `xs` namespaces.
+All column classes have a responsive counterpart based off of the `lg`, `md`, `sm`, and `xs` namespaces.
 
 Additionally, all grid and column *modifier* classes also have a responsive counterpart based off of the `lg`, `md`, `sm`, and `xs` namespaces.
 
@@ -134,26 +136,26 @@ For example, to center align all columns within a grid at the small breakpoint y
 
 #### Grid
 
-* `.grid--{namespace}-center`
-* `.grid--{namespace}-justify`
-* `.grid--{namespace}-left`
-* `.grid--{namespace}-right`
-* `.grid--{namespace}-top`
-* `.grid--{namespace}-bottom`
-* `.grid--{namespace}-middle`
-* `.grid--{namespace}-stretch`
+* `grid--{namespace}-center`
+* `grid--{namespace}-justify`
+* `grid--{namespace}-left`
+* `grid--{namespace}-right`
+* `grid--{namespace}-top`
+* `grid--{namespace}-bottom`
+* `grid--{namespace}-middle`
+* `grid--{namespace}-stretch`
 
 #### Columns
 
-* `.grid__col--{namespace}-left`
-* `.grid__col--{namespace}-right`
-* `.grid__col--{namespace}-top`
-* `.grid__col--{namespace}-bottom`
-* `.grid__col--{namespace}-middle`
-* `.grid__col--{namespace}-stretch`
-* `.grid__col--{namespace}-hidden`
-* `.grid__col--{namespace}-visible`
-* `.grid__col--{namespace}-order-{number}`
-* `.grid__col--{namespace}-order-first`
-* `.grid__col--{namespace}-order-last`
-* `.grid__col--{namespace}-offset-{number}`
+* `grid__col--{namespace}-left`
+* `grid__col--{namespace}-right`
+* `grid__col--{namespace}-top`
+* `grid__col--{namespace}-bottom`
+* `grid__col--{namespace}-middle`
+* `grid__col--{namespace}-stretch`
+* `grid__col--{namespace}-hidden`
+* `grid__col--{namespace}-visible`
+* `grid__col--{namespace}-order-{number}`
+* `grid__col--{namespace}-order-first`
+* `grid__col--{namespace}-order-last`
+* `grid__col--{namespace}-offset-{number}`
