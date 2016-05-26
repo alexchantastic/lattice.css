@@ -1,0 +1,22 @@
+{
+  "name": "lattice.css",
+  "version": "0.0.1",
+  "description": "A flexbox-based CSS grid framework that uses BEM naming conventions.",
+  "homepage": "https://github.com/alexchantastic/lattice.css",
+  "bugs": {"url": "https://github.com/alexchantastic/lattice.css/issues"},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alexchantastic/lattice.css.git"
+  },
+  "main": "src/lattice.scss",
+  "author": "Alex Chan",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.12.3",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-csso": "^1.1.0",
+    "gulp-sass": "^2.3.1",
+    "run-sequence": "^1.1.5"
+  }
+}
