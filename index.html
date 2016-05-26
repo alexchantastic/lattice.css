@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title>lattice.css</title>
+
+  <link rel="stylesheet" href="dist/lattice.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 18px;
+      color: #000;
+    }
+
+    header {
+      padding-top: 50px;
+      margin-bottom: 50px;
+    }
+
+    section {
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-weight: bold;
+    }
+
+    h1 { font-size: 32px; }
+
+    h2,
+    h3 {
+      margin-bottom: 20px;
+    }
+
+    h2 { font-size: 24px; }
+
+    h3 { font-size: 18px; }
+
+    .example {
+      padding-top: 10px;
+      margin-bottom: 50px;
+      background: #f5f5f5;
+    }
+
+    .example__grid--tall { height: 150px; }
+
+    .example__col--stretch { display: flex; }
+
+    .cell {
+      display: block;
+      width: 100%;
+      padding: 20px;
+      margin-bottom: 10px;
+      font-family: Consolas, fixed-width;
+      font-size: 14px;
+      background: #ddd;
+    }
+  </style>
+
+  <meta name="description" content="A responsive flexbox-based CSS grid framework that uses BEM naming conventions.">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+</head>
+<body>
+  <div class="container">
+    <header id="top">
+      <h1>lattice.css</h1>
+      <p>A responsive flexbox-based CSS grid framework that uses BEM naming conventions.</p>
+    </header>
+  </div>
+
+  <div class="container example">
+    <div class="grid">
+      <div class="grid__col-4 grid__col-xs-12"><span class="cell">.grid__col-4</span></div>
+      <div class="grid__col-4  grid__col-xs-12"><span class="cell">.grid__col-4</span></div>
+      <div class="grid__col-4  grid__col-xs-12"><span class="cell">.grid__col-4</span></div>
+    </div>
+
+    <div class="grid">
+      <div class="grid__col-3 grid__col-sm-6 grid__col-xs-12"><span class="cell">.grid__col-3</span></div>
+      <div class="grid__col-3 grid__col-sm-6 grid__col-xs-12"><span class="cell">.grid__col-3</span></div>
+      <div class="grid__col-3 grid__col-sm-6 grid__col-xs-12"><span class="cell">.grid__col-3</span></div>
+      <div class="grid__col-3 grid__col-sm-6 grid__col-xs-12"><span class="cell">.grid__col-3</span></div>
+    </div>
+
+    <div class="grid">
+      <div class="grid__col-6 grid__col-xs-12"><span class="cell">.grid__col-6</span></div>
+      <div class="grid__col-6 grid__col-xs-12"><span class="cell">.grid__col-6</span></div>
+    </div>
+
+    <div class="grid">
+      <div class="grid__col-8 grid__col-sm-4 grid__col-xs-12"><span class="cell">.grid__col-8</span></div>
+      <div class="grid__col-2 grid__col-sm-4 grid__col-xs-12"><span class="cell">.grid__col-2</span></div>
+      <div class="grid__col-2 grid__col-sm-4 grid__col-xs-12"><span class="cell">.grid__col-2</span></div>
+    </div>
+
+    <div class="grid">
+      <div class="grid__col-12"><span class="cell">.grid__col-12</span></div>
+    </div>
+  </div>
+
+  <section>
+    <div class="container">
+      <h2 id="offsets">Offsets</h2>
+    </div>
+
+    <div class="container example">
+      <div class="grid example__grid">
+        <div class="grid__col-3"><span class="cell">.grid__col-3</span></div>
+        <div class="grid__col-8 grid__col--offset-1"><span class="cell">.grid__col-8.grid__col--offset-1</span></div>
+      </div>
+
+      <div class="grid example__grid">
+        <div class="grid__col-5"><span class="cell">.grid__col-5</span></div>
+        <div class="grid__col-6 grid__col--offset-1"><span class="cell">.grid__col-6.grid__col--offset-1</span></div>
+      </div>
+
+      <div class="grid example__grid">
+        <div class="grid__col-7"><span class="cell">.grid__col-5</span></div>
+        <div class="grid__col-4 grid__col--offset-1"><span class="cell">.grid__col-4.grid__col--offset-1</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2 id="nesting">Nesting</h2>
+    </div>
+
+    <div class="container example">
+      <div class="grid example__grid">
+        <div class="grid__col-6">
+          <span class="cell">.grid__col-6</span>
+
+          <div class="grid example__grid">
+            <div class="grid__col-6"><span class="cell">.grid__col-6</span></div>
+            <div class="grid__col-6"><span class="cell">.grid__col-6</span></div>
+          </div>
+        </div>
+        <div class="grid__col-6">
+          <span class="cell">.grid__col-6</span>
+
+          <div class="grid example__grid">
+            <div class="grid__col-6"><span class="cell">.grid__col-6</span></div>
+            <div class="grid__col-6"><span class="cell">.grid__col-6</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2 id="fluid">Fluid</h2>
+    </div>
+
+    <div class="container container--fluid example">
+      <div class="grid example__grid">
+        <div class="grid__col-3"><span class="cell">.grid__col-3</span></div>
+        <div class="grid__col-3"><span class="cell">.grid__col-3</span></div>
+        <div class="grid__col-3"><span class="cell">.grid__col-3</span></div>
+        <div class="grid__col-3"><span class="cell">.grid__col-3</span></div>
+      </div>
+
+      <div class="grid example__grid">
+        <div class="grid__col-4"><span class="cell">.grid__col-4</span></div>
+        <div class="grid__col-4"><span class="cell">.grid__col-4</span></div>
+        <div class="grid__col-4"><span class="cell">.grid__col-4</span></div>
+      </div>
+
+      <div class="grid example__grid">
+        <div class="grid__col-6"><span class="cell">.grid__col-6</span></div>
+        <div class="grid__col-6"><span class="cell">.grid__col-6</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2 id="grid-utilities">Grid Utilities</h2>
+    </div>
+
+    <div class="container">
+      <h3 id="grid-center">.grid--center</h3>
+    </div>
+
+    <div class="container example">
+      <div class="grid grid--center example__grid">
+        <div class="grid__col-6"><span class="cell">.grid__col-6</span></div>
+      </div>
+    </div>
+
+    <div class="container">
+      <h3 id="grid-justify">.grid--justify</h3>
+    </div>
+
+    <div class="container example">
+      <div class="grid grid--justify example__grid">
+        <div class="grid__col-3"><span class="cell">.grid__col-3</span></div>
+        <div class="grid__col-3"><span class="cell">.grid__col-3</span></div>
+        <div class="grid__col-3"><span class="cell">.grid__col-3</span></div>
+      </div>
+    </div>
+
+    <div class="container">
+      <h3 id="grid-left">.grid--left</h3>
+    </div>
+
+    <div class="container example">
+      <div class="grid grid--left example__grid">
+        <div class="grid__col-4"><span class="cell">.grid__col-4</span></div>
+        <div class="grid__col-4"><span class="cell">.grid__col-4</span></div>
+      </div>
+    </div>
+
+    <div class="container">
+      <h3 id="grid-right">.grid--right</h3>
+    </div>
+
+    <div class="container example">
+      <div class="grid grid--right example__grid">
+        <div class="grid__col-4"><span class="cell">.grid__col-4</span></div>
+        <div class="grid__col-4"><span class="cell">.grid__col-4</span></div>
+      </div>
+    </div>
+
+    <div class="container">
+      <h3 id="grid-top">.grid--top</h3>
+    </div>
+
+    <div class="container example">
+      <div class="grid grid--top example__grid example__grid--tall">
+        <div class="grid__col-6"><span class="cell">.grid__col-6</span></div>
+        <div class="grid__col-6"><span class="cell">.grid__col-6</span></div>
+      </div>
+    </div>
+
+    <div class="container">
+      <h3 id="grid-middle">.grid--middle</h3>
+    </div>
+
+    <div class="container example">
+      <div class="grid grid--middle example__grid example__grid--tall">
+        <div class="grid__col-6"><span class="cell">.grid__col-6</span></div>
+        <div class="grid__col-6"><span class="cell">.grid__col-6</span></div>
+      </div>
+    </div>
+
+    <div class="container">
+      <h3 id="grid-bottom">.grid--bottom</h3>
+    </div>
+
+    <div class="container example">
+      <div class="grid grid--bottom example__grid example__grid--tall">
+        <div class="grid__col-6"><span class="cell">.grid__col-6</span></div>
+        <div class="grid__col-6"><span class="cell">.grid__col-6</span></div>
+      </div>
+    </div>
+
+    <div class="container">
+      <h3 id="grid-stretch">.grid--stretch</h3>
+    </div>
+
+    <div class="container example">
+      <div class="grid grid--stretch example__grid example__grid--tall">
+        <div class="grid__col-6 example__col--stretch"><span class="cell">.grid__col-6</span></div>
+        <div class="grid__col-6 example__col--stretch"><span class="cell">.grid__col-6</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2 id="column-utilities">Column Utilities</h2>
+    </div>
+
+    <div class="container">
+      <h3 id="col-left-right">.grid__col--left / .grid__col--right</h3>
+    </div>
+
+    <div class="container example">
+      <div class="grid example__grid">
+        <div class="grid__col-4 grid__col--left"><span class="cell">.grid__col-4.grid__col--left</span></div>
+        <div class="grid__col-4 grid__col--right"><span class="cell">.grid__col-4.grid__col--right</span></div>
+      </div>
+    </div>
+
+    <div class="container">
+      <h3 id="col-top-middle-bottom">.grid__col--top / .grid__col--middle / .grid__col--bottom</h3>
+    </div>
+
+    <div class="container example">
+      <div class="grid example__grid example__grid--tall">
+        <div class="grid__col-4 grid__col--top"><span class="cell">.grid__col-4.grid__col--top</span></div>
+        <div class="grid__col-4 grid__col--middle"><span class="cell">.grid__col-4.grid__col--middle</span></div>
+        <div class="grid__col-4 grid__col--bottom"><span class="cell">.grid__col-4.grid__col--bottom</span></div>
+      </div>
+    </div>
+
+    <div class="container">
+      <h3 id="col-stretch">.grid__col--stretch</h3>
+    </div>
+
+    <div class="container example">
+      <div class="grid example__grid example__grid--tall">
+        <div class="grid__col-4 grid__col--stretch example__col--stretch"><span class="cell">.grid__col-4.grid__col--stretch</span></div>
+        <div class="grid__col-4"><span class="cell">.grid__col-4</span></div>
+        <div class="grid__col-4"><span class="cell">.grid__col-4</span></div>
+      </div>
+    </div>
+
+    <div class="container">
+      <h3 id="col-hidden-visible">.grid__col--hidden / .grid__col--visible</h3>
+    </div>
+
+    <div class="container example">
+      <div class="grid example__grid">
+        <div class="grid__col-6 grid__col--hidden"><span class="cell">.grid__col-6.grid__col--hidden</span></div>
+        <div class="grid__col-6 grid__col--visible"><span class="cell">.grid__col-6.grid__col--visible</span></div>
+      </div>
+    </div>
+
+    <div class="container">
+      <h3 id="col-order-number">.grid__col--order-{number}</h3>
+    </div>
+
+    <div class="container example">
+      <div class="grid example__grid">
+        <div class="grid__col-4 grid__col--order-3"><span class="cell">.grid__col-4.grid__col--order-3</span></div>
+        <div class="grid__col-4 grid__col--order-2"><span class="cell">.grid__col-4.grid__col--order-2</span></div>
+        <div class="grid__col-4 grid__col--order-1"><span class="cell">.grid__col-4.grid__col--order-1</span></div>
+      </div>
+    </div>
+
+    <div class="container">
+      <h3 id="col-order-first-last">.grid__col--order-first / .grid__col--order-last</h3>
+    </div>
+
+    <div class="container example">
+      <div class="grid example__grid">
+        <div class="grid__col-3 grid__col--order-last"><span class="cell">.grid__col-3.grid__col--order-last</span></div>
+        <div class="grid__col-3"><span class="cell">.grid__col-3</span></div>
+        <div class="grid__col-3"><span class="cell">.grid__col-3</span></div>
+        <div class="grid__col-3 grid__col--order-first"><span class="cell">.grid__col-3.grid__col--order-first</span></div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
