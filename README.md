@@ -14,6 +14,7 @@ Lattice is a responsive [flexbox](https://developer.mozilla.org/en-US/docs/Web/C
   * [Columns](#columns)
   * [Nesting](#nesting)
   * [Responsive](#responsive)
+* [Compatibility](#compatibility)
 
 ## Installation
 
@@ -174,3 +175,15 @@ For example, to center align all columns within a grid at the small breakpoint y
 * `grid__col--{namespace}-order-first`
 * `grid__col--{namespace}-order-last`
 * `grid__col--{namespace}-offset-{number}`
+
+## Compatibility
+
+Lattice is compatible wherever the flexbox specification has been implemented.
+
+* Chrome 21+
+* Firefox 28+
+* Safari 6.1+
+* Opera 21.1
+* Internet Explorer 10+
+
+For a more comprehensive list, see [http://caniuse.com/#feat=flexbox](http://caniuse.com/#feat=flexbox).
