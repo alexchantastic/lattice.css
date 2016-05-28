@@ -143,9 +143,9 @@ Grids can be nested within one another like so:
 ```
 <div class="container">
   <div class="grid">
-    <div class="grid__col-4 grid__col-lg-4 grid__col-md-6 grid__col-sm-12 grid__col-xs-12">4</div>
-    <div class="grid__col-4 grid__col-lg-4 grid__col-md-6 grid__col-sm-12 grid__col-xs-12">4</div>
-    <div class="grid__col-4 grid__col-lg-4 grid__col-md-12 grid__col-sm-12 grid__col-xs-12">4</div>
+    <div class="grid__col-4 grid__col-md-6 grid__col-sm-max-12">4</div>
+    <div class="grid__col-4 grid__col-md-6 grid__col-sm-max-12">4</div>
+    <div class="grid__col-4 grid__col-md-12 grid__col-sm-max-12">4</div>
   </div>
 </div>
 ```
@@ -195,6 +195,33 @@ For example, to center align all columns within a grid at the small breakpoint y
 * `grid__col--{namespace}-order-first`
 * `grid__col--{namespace}-order-last`
 * `grid__col--{namespace}-offset-{number}`
+
+#### Mixins
+
+```
+@include lattice-screen-md {
+  body { background: #000; }
+}
+```
+
+If you are using Lattice with [SASS](http://sass-lang.com/), you can access the built in responsive mixins.
+
+* `lattice-screen-xl`: XLarge screens
+* `lattice-screen-xl-max`: XLarge screens and smaller
+* `lattice-screen-xl-min`: XLarge screens and larger
+* `lattice-screen-lg`: Large screens
+* `lattice-screen-lg-max`: Large screens and smaller
+* `lattice-screen-lg-min`: Large screens and larger
+* `lattice-screen-md`: Medium screens
+* `lattice-screen-md-max`: Medium screens and smaller
+* `lattice-screen-md-min`: Medium screens and larger
+* `lattice-screen-sm`: Small screens
+* `lattice-screen-sm-max`: Small screens and smaller
+* `lattice-screen-sm-min`: Small screens and larger
+* `lattice-screen-xs`: XSmall screens
+* `lattice-screen-xs-max`: XSmall screens and smaller
+* `lattice-screen-xs-min`: XSmall screens and larger
+
 
 ## Compatibility
 
