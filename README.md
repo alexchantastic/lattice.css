@@ -151,20 +151,20 @@ Grids can be nested within one another like so:
 ```
 
 * `xl`: XLarge screens
-* `xl-max`: XLarge screens and below
-* `xl-min`: XLarge screens and up
+* `xl-max`: XLarge screens and smaller
+* `xl-min`: XLarge screens and larger
 * `lg`: Large screens
-* `lg-max`: Large screens and below
-* `lg-min`: Large screens and up
+* `lg-max`: Large screens and smaller
+* `lg-min`: Large screens and larger
 * `md`: Medium screens
-* `md-max`: Medium screens and below
-* `md-min`: Medium screens and up
+* `md-max`: Medium screens and smaller
+* `md-min`: Medium screens and larger
 * `sm`: Small screens
-* `sm-max`: Small screens and below
-* `sm-min`: Small screens and up
+* `sm-max`: Small screens and smaller
+* `sm-min`: Small screens and larger
 * `xs`: XSmall screens
-* `xs-max`: XSmall screens and below
-* `xs-min`: XSmall screens and up
+* `xs-max`: XSmall screens and smaller
+* `xs-min`: XSmall screens and larger
 
 All column classes have a responsive counterpart based off of the responsive namespaces. Additionally, all grid and column *modifier* classes also have a responsive counterpart based off of the responsive namespaces.
 
