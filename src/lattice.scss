@@ -71,14 +71,6 @@ $lattice-map: (
 }
 
 /**
- * XLarge max screen media query
- * @return Media query at xlarge screen and smaller
- */
-@mixin lattice-screen-xl-max {
-  @content;
-}
-
-/**
  * XLarge min screen media query
  * @return Media query at xlarge screen and larger
  */
@@ -197,16 +189,6 @@ $lattice-map: (
  */
 @mixin lattice-screen-xs-max {
   @media (max-width: #{map-get(map-get($lattice-map, xs), breakpoint)}) {
-    @content;
-  }
-}
-
-/**
- * XSmall screen media query
- * @return Media query at xsmall screen and larger
- */
-@mixin lattice-screen-xs-min {
-  @media (min-width: 0) {
     @content;
   }
 }
@@ -348,10 +330,6 @@ $lattice-map: (
   @include lattice-generate('xl');
 }
 
-@include lattice-screen-xl-max {
-  @include lattice-generate-grid('xl-max');
-}
-
 @include lattice-screen-xl-min {
   @include lattice-generate-grid('xl-min');
 }
@@ -402,8 +380,4 @@ $lattice-map: (
 
 @include lattice-screen-xs-max {
   @include lattice-generate-grid('xs-max');
-}
-
-@include lattice-screen-xs-min {
-  @include lattice-generate-grid('xs-min');
 }

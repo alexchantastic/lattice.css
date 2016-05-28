@@ -151,7 +151,6 @@ Grids can be nested within one another like so:
 ```
 
 * `xl`: XLarge screens
-* `xl-max`: XLarge screens and smaller
 * `xl-min`: XLarge screens and larger
 * `lg`: Large screens
 * `lg-max`: Large screens and smaller
@@ -164,7 +163,6 @@ Grids can be nested within one another like so:
 * `sm-min`: Small screens and larger
 * `xs`: XSmall screens
 * `xs-max`: XSmall screens and smaller
-* `xs-min`: XSmall screens and larger
 
 All column classes have a responsive counterpart based off of the responsive namespaces. Additionally, all grid and column *modifier* classes also have a responsive counterpart based off of the responsive namespaces.
 
@@ -207,7 +205,6 @@ For example, to center align all columns within a grid at the small breakpoint y
 If you are using Lattice with [SASS](http://sass-lang.com/), you can access the built in responsive mixins.
 
 * `lattice-screen-xl`: XLarge screens
-* `lattice-screen-xl-max`: XLarge screens and smaller
 * `lattice-screen-xl-min`: XLarge screens and larger
 * `lattice-screen-lg`: Large screens
 * `lattice-screen-lg-max`: Large screens and smaller
@@ -220,7 +217,6 @@ If you are using Lattice with [SASS](http://sass-lang.com/), you can access the 
 * `lattice-screen-sm-min`: Small screens and larger
 * `lattice-screen-xs`: XSmall screens
 * `lattice-screen-xs-max`: XSmall screens and smaller
-* `lattice-screen-xs-min`: XSmall screens and larger
 
 
 ## Compatibility
