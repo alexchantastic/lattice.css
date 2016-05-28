@@ -2,6 +2,8 @@
 
 Lattice is a responsive [flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes)-based CSS grid framework that utilizes [BEM](http://getbem.com/) naming conventions. Lattice is fully-featured and is built with customization in mind.
 
+Lattice is *default first* in that the grid is tuned to whichever viewport size you would prefer to optimize for first.
+
 [View Demo](https://alexchantastic.github.io/lattice.css/)
 
 ## Table of Contents
@@ -39,6 +41,8 @@ Coming soon...
 * `$lattice-breakpoint-md`: Medium screen breakpoint
 * `$lattice-breakpoint-sm`: Small screen breakpoint
 * `$lattice-breakpoint-xs`: Xsmall screen breakpoint
+
+**Note:** There is no large screen breakpoint setting as this is automatically calculated from the medium screen breakpoint.
 
 #### Container Widths
 
@@ -144,9 +148,22 @@ Grids can be nested within one another like so:
 </div>
 ```
 
-All column classes have a responsive counterpart based off of the `lg`, `md`, `sm`, and `xs` namespaces.
+* `lg`: Large screen sizes
+* `lg-max`: Large screen sizes and below
+* `lg-min`: Large screen sizes and up
+* `md`: Medium screen sizes
+* `md-max`: Medium screen sizes and below
+* `md-min`: Medium screen sizes and up
+* `sm`: Small screen sizes
+* `sm-max`: Small screen sizes and below
+* `sm-min`: Small screen sizes and up
+* `xs`: Xsmall screen sizes
+* `xs-max`: Xsmall screen sizes and below
+* `xs-min`: Xsmall screen sizes and up
 
-Additionally, all grid and column *modifier* classes also have a responsive counterpart based off of the `lg`, `md`, `sm`, and `xs` namespaces.
+All column classes have a responsive counterpart based off of the `lg`, `lg-max`, `lg-min`, `md`, `md-max`, `md-min`, `sm`, `sm-max`, `sm-min`, `xs`, `xs-max`, `xs-min`, namespaces.
+
+Additionally, all grid and column *modifier* classes also have a responsive counterpart based off of the `lg`, `lg-max`, `lg-min`, `md`, `md-max`, `md-min`, `sm`, `sm-max`, `sm-min`, `xs`, `xs-max`, `xs-min`, namespaces.
 
 For example, to center align all columns within a grid at the small breakpoint you could use the class `grid--sm-center`.
 

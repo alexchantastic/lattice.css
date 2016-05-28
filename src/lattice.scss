@@ -62,6 +62,16 @@ $lattice-map: (
   }
 }
 
+@mixin lattice-screen-lg-max {
+  @content;
+}
+
+@mixin lattice-screen-lg-min {
+  @media (min-width: #{map-get(map-get($lattice-map, md), breakpoint) + 1 }) {
+    @content;
+  }
+}
+
 /**
  * Medium screen media query
  * @return Media query at medium screen
@@ -69,6 +79,18 @@ $lattice-map: (
 @mixin lattice-screen-md {
   @media (min-width: #{map-get(map-get($lattice-map, sm), breakpoint) - 1}) and
          (max-width: map-get(map-get($lattice-map, md), breakpoint)) {
+    @content;
+  }
+}
+
+@mixin lattice-screen-md-max {
+  @media (max-width: map-get(map-get($lattice-map, md), breakpoint)) {
+    @content;
+  }
+}
+
+@mixin lattice-screen-md-min {
+  @media (min-width: #{map-get(map-get($lattice-map, sm), breakpoint) + 1 }) {
     @content;
   }
 }
@@ -84,12 +106,36 @@ $lattice-map: (
   }
 }
 
+@mixin lattice-screen-sm-max {
+  @media (max-width: map-get(map-get($lattice-map, sm), breakpoint)) {
+    @content;
+  }
+}
+
+@mixin lattice-screen-sm-min {
+  @media (min-width: #{map-get(map-get($lattice-map, xs), breakpoint) + 1 }) {
+    @content;
+  }
+}
+
 /**
  * Xsmall screen media query
  * @return Media query at xsmall screen
  */
 @mixin lattice-screen-xs {
   @media (max-width: map-get(map-get($lattice-map, xs), breakpoint)) {
+    @content;
+  }
+}
+
+@mixin lattice-screen-xs-max {
+  @media (max-width: map-get(map-get($lattice-map, xs), breakpoint)) {
+    @content;
+  }
+}
+
+@mixin lattice-screen-xs-min {
+  @media (min-width: 0) {
     @content;
   }
 }
@@ -221,6 +267,8 @@ $lattice-map: (
   align-items: flex-start;
 }
 
+[class*="grid__col-"] { width: 100%; }
+
 // Generate styles for default screen
 @include lattice-generate('default');
 
@@ -229,9 +277,25 @@ $lattice-map: (
   @include lattice-generate('lg');
 }
 
+@include lattice-screen-lg-max {
+  @include lattice-generate-grid('lg-max');
+}
+
+@include lattice-screen-lg-min {
+  @include lattice-generate-grid('lg-min');
+}
+
 // Generate styles for medium screen
 @include lattice-screen-md {
   @include lattice-generate('md');
+}
+
+@include lattice-screen-md-max {
+  @include lattice-generate-grid('md-max');
+}
+
+@include lattice-screen-md-min {
+  @include lattice-generate-grid('md-min');
 }
 
 // Generate styles for small screen
@@ -239,7 +303,23 @@ $lattice-map: (
   @include lattice-generate('sm');
 }
 
+@include lattice-screen-sm-max {
+  @include lattice-generate-grid('sm-max');
+}
+
+@include lattice-screen-sm-min {
+  @include lattice-generate-grid('sm-min');
+}
+
 // Generate styles for xsmall screen
 @include lattice-screen-xs {
   @include lattice-generate('xs');
+}
+
+@include lattice-screen-xs-max {
+  @include lattice-generate-grid('xs-max');
+}
+
+@include lattice-screen-xs-min {
+  @include lattice-generate-grid('xs-min');
 }
