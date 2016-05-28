@@ -38,27 +38,29 @@ Coming soon...
 
 #### Breakpoints
 
-* `$lattice-breakpoint-md`: Medium screen breakpoint
-* `$lattice-breakpoint-sm`: Small screen breakpoint
-* `$lattice-breakpoint-xs`: Xsmall screen breakpoint
+* `$lattice-breakpoint-lg`: Large screen breakpoint (default: `1200px`)
+* `$lattice-breakpoint-md`: Medium screen breakpoint (default: `992px`)
+* `$lattice-breakpoint-sm`: Small screen breakpoint (default: `768px`)
+* `$lattice-breakpoint-xs`: XSmall screen breakpoint (default: `544px`)
 
-**Note:** There is no large screen breakpoint setting as this is automatically calculated from the medium screen breakpoint.
+**Note:** There is no xlarge screen breakpoint setting as this is automatically calculated from the large screen breakpoint.
 
 #### Container Widths
 
-* `$lattice-container-width-default`: Container default width
-* `$lattice-container-width-lg`: Container width at large screen
-* `$lattice-container-width-md`: Container width at medium screen
-* `$lattice-container-width-sm`: Container width at small screen
-* `$lattice-container-width-xs`: Container width at xsmall screen
+* `$lattice-container-width-default`: Container default width (default: `1140px`)
+* `$lattice-container-width-xl`: Container width on large screens (default: `1140px`)
+* `$lattice-container-width-lg`: Container width on large screens (default: `940px`)
+* `$lattice-container-width-md`: Container width on medium screens (default: `720px`)
+* `$lattice-container-width-sm`: Container width on small screens (default: `576px`)
+* `$lattice-container-width-xs`: Container width on xsmall screens (default: `100%`)
 
 #### Gutter Widths
 
-* `$lattice-gutter-width-default`: Column gutter default width
-* `$lattice-gutter-width-lg`: Column gutter width at large screen
-* `$lattice-gutter-width-md`: Column gutter width at medium screen
-* `$lattice-gutter-width-sm`: Column gutter width at small screen
-* `$lattice-gutter-width-xs`: Column gutter width at xsmall screen
+* `$lattice-gutter-width-default`: Column gutter default width (default: `15px`)
+* `$lattice-gutter-width-lg`: Column gutter width on large screens (default: `15px`)
+* `$lattice-gutter-width-md`: Column gutter width on medium screens (default: `15px`)
+* `$lattice-gutter-width-sm`: Column gutter width on small screens (default: `15px`)
+* `$lattice-gutter-width-xs`: Column gutter width on xsmall screens (default: `15px`)
 
 ### Container
 
@@ -148,22 +150,23 @@ Grids can be nested within one another like so:
 </div>
 ```
 
-* `lg`: Large screen sizes
-* `lg-max`: Large screen sizes and below
-* `lg-min`: Large screen sizes and up
-* `md`: Medium screen sizes
-* `md-max`: Medium screen sizes and below
-* `md-min`: Medium screen sizes and up
-* `sm`: Small screen sizes
-* `sm-max`: Small screen sizes and below
-* `sm-min`: Small screen sizes and up
-* `xs`: Xsmall screen sizes
-* `xs-max`: Xsmall screen sizes and below
-* `xs-min`: Xsmall screen sizes and up
+* `xl`: XLarge screens
+* `xl-max`: XLarge screens and below
+* `xl-min`: XLarge screens and up
+* `lg`: Large screens
+* `lg-max`: Large screens and below
+* `lg-min`: Large screens and up
+* `md`: Medium screens
+* `md-max`: Medium screens and below
+* `md-min`: Medium screens and up
+* `sm`: Small screens
+* `sm-max`: Small screens and below
+* `sm-min`: Small screens and up
+* `xs`: XSmall screens
+* `xs-max`: XSmall screens and below
+* `xs-min`: XSmall screens and up
 
-All column classes have a responsive counterpart based off of the `lg`, `lg-max`, `lg-min`, `md`, `md-max`, `md-min`, `sm`, `sm-max`, `sm-min`, `xs`, `xs-max`, `xs-min`, namespaces.
-
-Additionally, all grid and column *modifier* classes also have a responsive counterpart based off of the `lg`, `lg-max`, `lg-min`, `md`, `md-max`, `md-min`, `sm`, `sm-max`, `sm-min`, `xs`, `xs-max`, `xs-min`, namespaces.
+All column classes have a responsive counterpart based off of the responsive namespaces. Additionally, all grid and column *modifier* classes also have a responsive counterpart based off of the responsive namespaces.
 
 For example, to center align all columns within a grid at the small breakpoint you could use the class `grid--sm-center`.
 

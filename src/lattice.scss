@@ -2,17 +2,20 @@
 
 /* Variables
    ========================================================================== */
-$lattice-breakpoint-md: 1199px !default;
-$lattice-breakpoint-sm: 991px !default;
-$lattice-breakpoint-xs: 767px !default;
+$lattice-breakpoint-lg: 1200px !default;
+$lattice-breakpoint-md: 992px !default;
+$lattice-breakpoint-sm: 768px !default;
+$lattice-breakpoint-xs: 544px !default;
 
-$lattice-container-width-default: 1170px !default;
-$lattice-container-width-lg: $lattice-container-width-default !default;
-$lattice-container-width-md: 970px !default;
-$lattice-container-width-sm: 750px !default;
+$lattice-container-width-default: 1140px !default;
+$lattice-container-width-xl: $lattice-container-width-default !default;
+$lattice-container-width-lg: 940px !default;
+$lattice-container-width-md: 720px !default;
+$lattice-container-width-sm: 576px !default;
 $lattice-container-width-xs: 100% !default;
 
 $lattice-gutter-width-default: 15px !default;
+$lattice-gutter-width-xl: $lattice-gutter-width-default !default;
 $lattice-gutter-width-lg: $lattice-gutter-width-default !default;
 $lattice-gutter-width-md: $lattice-gutter-width-default !default;
 $lattice-gutter-width-sm: $lattice-gutter-width-default !default;
@@ -29,7 +32,12 @@ $lattice-map: (
     container-width: $lattice-container-width-default,
     gutter-width: $lattice-gutter-width-default,
   ),
+  xl: (
+    container-width: $lattice-container-width-xl,
+    gutter-width: $lattice-gutter-width-xl,
+  ),
   lg: (
+    breakpoint: $lattice-breakpoint-lg,
     container-width: $lattice-container-width-lg,
     gutter-width: $lattice-gutter-width-lg,
   ),
@@ -53,17 +61,40 @@ $lattice-map: (
 /* Mixins
    ========================================================================== */
 /**
+ * XLarge screen media query
+ * @return Media query at large screen
+ */
+@mixin lattice-screen-xl {
+  @media (min-width: #{map-get(map-get($lattice-map, lg), breakpoint) + 1 }) {
+    @content;
+  }
+}
+
+@mixin lattice-screen-xl-max {
+  @content;
+}
+
+@mixin lattice-screen-xl-min {
+  @media (min-width: #{map-get(map-get($lattice-map, lg), breakpoint) + 1 }) {
+    @content;
+  }
+}
+
+/**
  * Large screen media query
  * @return Media query at large screen
  */
 @mixin lattice-screen-lg {
-  @media (min-width: #{map-get(map-get($lattice-map, md), breakpoint) + 1 }) {
+  @media (min-width: #{map-get(map-get($lattice-map, md), breakpoint) + 1}) and
+         (max-width: #{map-get(map-get($lattice-map, lg), breakpoint)}) {
     @content;
   }
 }
 
 @mixin lattice-screen-lg-max {
-  @content;
+  @media (max-width: #{map-get(map-get($lattice-map, lg), breakpoint)}) {
+    @content;
+  }
 }
 
 @mixin lattice-screen-lg-min {
@@ -77,14 +108,14 @@ $lattice-map: (
  * @return Media query at medium screen
  */
 @mixin lattice-screen-md {
-  @media (min-width: #{map-get(map-get($lattice-map, sm), breakpoint) - 1}) and
-         (max-width: map-get(map-get($lattice-map, md), breakpoint)) {
+  @media (min-width: #{map-get(map-get($lattice-map, sm), breakpoint) + 1}) and
+         (max-width: #{map-get(map-get($lattice-map, md), breakpoint)}) {
     @content;
   }
 }
 
 @mixin lattice-screen-md-max {
-  @media (max-width: map-get(map-get($lattice-map, md), breakpoint)) {
+  @media (max-width: #{map-get(map-get($lattice-map, md), breakpoint)}) {
     @content;
   }
 }
@@ -100,14 +131,14 @@ $lattice-map: (
  * @return Media query at small screen
  */
 @mixin lattice-screen-sm {
-  @media (min-width: #{map-get(map-get($lattice-map, xs), breakpoint) - 1}) and
-         (max-width: map-get(map-get($lattice-map, sm), breakpoint)) {
+  @media (min-width: #{map-get(map-get($lattice-map, xs), breakpoint) + 1}) and
+         (max-width: #{map-get(map-get($lattice-map, sm), breakpoint)}) {
     @content;
   }
 }
 
 @mixin lattice-screen-sm-max {
-  @media (max-width: map-get(map-get($lattice-map, sm), breakpoint)) {
+  @media (max-width: #{map-get(map-get($lattice-map, sm), breakpoint)}) {
     @content;
   }
 }
@@ -119,17 +150,17 @@ $lattice-map: (
 }
 
 /**
- * Xsmall screen media query
- * @return Media query at xsmall screen
+ * XSmall screen media query
+ * @return Media query at XSmall screen
  */
 @mixin lattice-screen-xs {
-  @media (max-width: map-get(map-get($lattice-map, xs), breakpoint)) {
+  @media (max-width: #{map-get(map-get($lattice-map, xs), breakpoint)}) {
     @content;
   }
 }
 
 @mixin lattice-screen-xs-max {
-  @media (max-width: map-get(map-get($lattice-map, xs), breakpoint)) {
+  @media (max-width: #{map-get(map-get($lattice-map, xs), breakpoint)}) {
     @content;
   }
 }
@@ -269,10 +300,23 @@ $lattice-map: (
 
 [class*="grid__col-"] { width: 100%; }
 
-// Generate styles for default screen
+// Generate styles for default screens
 @include lattice-generate('default');
 
-// Generate styles for large screen
+// Generate styles for xlarge screens
+@include lattice-screen-xl {
+  @include lattice-generate('xl');
+}
+
+@include lattice-screen-xl-max {
+  @include lattice-generate-grid('xl-max');
+}
+
+@include lattice-screen-xl-min {
+  @include lattice-generate-grid('xl-min');
+}
+
+// Generate styles for large screens
 @include lattice-screen-lg {
   @include lattice-generate('lg');
 }
@@ -285,7 +329,7 @@ $lattice-map: (
   @include lattice-generate-grid('lg-min');
 }
 
-// Generate styles for medium screen
+// Generate styles for medium screens
 @include lattice-screen-md {
   @include lattice-generate('md');
 }
@@ -298,7 +342,7 @@ $lattice-map: (
   @include lattice-generate-grid('md-min');
 }
 
-// Generate styles for small screen
+// Generate styles for small screens
 @include lattice-screen-sm {
   @include lattice-generate('sm');
 }
@@ -311,7 +355,7 @@ $lattice-map: (
   @include lattice-generate-grid('sm-min');
 }
 
-// Generate styles for xsmall screen
+// Generate styles for xsmall screens
 @include lattice-screen-xs {
   @include lattice-generate('xs');
 }
