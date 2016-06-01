@@ -57,6 +57,7 @@ Coming soon...
 #### Gutter Widths
 
 * `$lattice-gutter-width-default`: Column gutter default width (default: `15px`)
+* `$lattice-gutter-width-xl`: Column gutter width on large screens (default: `15px`)
 * `$lattice-gutter-width-lg`: Column gutter width on large screens (default: `15px`)
 * `$lattice-gutter-width-md`: Column gutter width on medium screens (default: `15px`)
 * `$lattice-gutter-width-sm`: Column gutter width on small screens (default: `15px`)
