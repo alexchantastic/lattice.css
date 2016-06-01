@@ -150,8 +150,7 @@ Grids can be nested within one another like so:
 </div>
 ```
 
-* `xl`: XLarge screens
-* `xl-min`: XLarge screens and larger
+* `xl`: XLarge screens and larger
 * `lg`: Large screens
 * `lg-max`: Large screens and smaller
 * `lg-min`: Large screens and larger
@@ -161,8 +160,7 @@ Grids can be nested within one another like so:
 * `sm`: Small screens
 * `sm-max`: Small screens and smaller
 * `sm-min`: Small screens and larger
-* `xs`: XSmall screens
-* `xs-max`: XSmall screens and smaller
+* `xs`: XSmall screens and smaller
 
 All column classes have a responsive counterpart based off of the responsive namespaces. Additionally, all grid and column *modifier* classes also have a responsive counterpart based off of the responsive namespaces.
 
@@ -197,6 +195,8 @@ For example, to center align all columns within a grid at the small breakpoint y
 #### Mixins
 
 ```
+@import 'lattice';
+
 @include lattice-screen-md {
   body { background: #000; }
 }
@@ -204,8 +204,7 @@ For example, to center align all columns within a grid at the small breakpoint y
 
 If you are using Lattice with [SASS](http://sass-lang.com/), you can access the built in responsive mixins.
 
-* `lattice-screen-xl`: XLarge screens
-* `lattice-screen-xl-min`: XLarge screens and larger
+* `lattice-screen-xl`: XLarge screens and larger
 * `lattice-screen-lg`: Large screens
 * `lattice-screen-lg-max`: Large screens and smaller
 * `lattice-screen-lg-min`: Large screens and larger
@@ -215,8 +214,7 @@ If you are using Lattice with [SASS](http://sass-lang.com/), you can access the 
 * `lattice-screen-sm`: Small screens
 * `lattice-screen-sm-max`: Small screens and smaller
 * `lattice-screen-sm-min`: Small screens and larger
-* `lattice-screen-xs`: XSmall screens
-* `lattice-screen-xs-max`: XSmall screens and smaller
+* `lattice-screen-xs`: XSmall screens and smaller
 
 
 ## Compatibility
