@@ -2,6 +2,8 @@
 
 /* Variables
    ========================================================================== */
+$lattice-enable-responsive: true !default;
+
 $lattice-breakpoint-lg: 1200px !default;
 $lattice-breakpoint-md: 992px !default;
 $lattice-breakpoint-sm: 768px !default;
@@ -305,51 +307,53 @@ $lattice-map: (
 // Generate styles for default screens
 @include lattice-generate('default');
 
-// Generate styles for xlarge screens
-@include lattice-screen-xl {
-  @include lattice-generate('xl');
-}
+@if $lattice-enable-responsive {
+  // Generate styles for xlarge screens
+  @include lattice-screen-xl {
+    @include lattice-generate('xl');
+  }
 
-// Generate styles for large screens
-@include lattice-screen-lg {
-  @include lattice-generate('lg');
-}
+  // Generate styles for large screens
+  @include lattice-screen-lg {
+    @include lattice-generate('lg');
+  }
 
-@include lattice-screen-lg-max {
-  @include lattice-generate-grid('lg-max');
-}
+  @include lattice-screen-lg-max {
+    @include lattice-generate-grid('lg-max');
+  }
 
-@include lattice-screen-lg-min {
-  @include lattice-generate-grid('lg-min');
-}
+  @include lattice-screen-lg-min {
+    @include lattice-generate-grid('lg-min');
+  }
 
-// Generate styles for medium screens
-@include lattice-screen-md {
-  @include lattice-generate('md');
-}
+  // Generate styles for medium screens
+  @include lattice-screen-md {
+    @include lattice-generate('md');
+  }
 
-@include lattice-screen-md-max {
-  @include lattice-generate-grid('md-max');
-}
+  @include lattice-screen-md-max {
+    @include lattice-generate-grid('md-max');
+  }
 
-@include lattice-screen-md-min {
-  @include lattice-generate-grid('md-min');
-}
+  @include lattice-screen-md-min {
+    @include lattice-generate-grid('md-min');
+  }
 
-// Generate styles for small screens
-@include lattice-screen-sm {
-  @include lattice-generate('sm');
-}
+  // Generate styles for small screens
+  @include lattice-screen-sm {
+    @include lattice-generate('sm');
+  }
 
-@include lattice-screen-sm-max {
-  @include lattice-generate-grid('sm-max');
-}
+  @include lattice-screen-sm-max {
+    @include lattice-generate-grid('sm-max');
+  }
 
-@include lattice-screen-sm-min {
-  @include lattice-generate-grid('sm-min');
-}
+  @include lattice-screen-sm-min {
+    @include lattice-generate-grid('sm-min');
+  }
 
-// Generate styles for xsmall screens
-@include lattice-screen-xs {
-  @include lattice-generate('xs');
+  // Generate styles for xsmall screens
+  @include lattice-screen-xs {
+    @include lattice-generate('xs');
+  }
 }

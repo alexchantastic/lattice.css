@@ -36,6 +36,10 @@ Coming soon...
 
 ### Settings
 
+#### Functionality
+
+* `$lattice-enable-responsive`: Enable responsive classes (default: `true`)
+
 #### Breakpoints
 
 * `$lattice-breakpoint-lg`: Large screen breakpoint (default: `1200px`)
