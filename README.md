@@ -20,7 +20,21 @@ Lattice is *default first* in that the grid is tuned to whichever viewport size 
 
 ## Installation
 
-Coming soon...
+### NPM
+
+```
+npm install --save-dev lattice.css
+```
+
+### Bower
+
+```
+bower install --save-dev lattice.css
+```
+
+### Download
+
+See [https://raw.githubusercontent.com/alexchantastic/lattice.css/master/dist/lattice.css](https://raw.githubusercontent.com/alexchantastic/lattice.css/master/dist/lattice.css)
 
 ## Usage
 
