@@ -1,4 +1,4 @@
-/*! Lattice v0.0.1 | MIT License | https://github.com/alexchantastic/lattice.css */
+/*! Lattice v1.0.0 | MIT License | https://github.com/alexchantastic/lattice.css */
 
 /* Variables
    ========================================================================== */
@@ -177,7 +177,7 @@ $lattice-map: (
 
 /**
  * Generate base styles
- * @param {string} Breakpoint string value (lg, md, sm, xs)
+ * @param {string} Breakpoint string value (xl, lg, md, sm, xs)
  * @return Base styles at the given breakpoint
  */
 @mixin lattice-generate-base($breakpoint) {
@@ -202,7 +202,7 @@ $lattice-map: (
 
 /**
  * Generate grid styles
- * @param {string} Breakpoint string value (lg, md, sm, xs)
+ * @param {string} Breakpoint string value (xl, lg, md, sm, xs)
  * @return Grid styles at the given breakpoint
  */
 @mixin lattice-generate-grid($breakpoint) {
@@ -270,7 +270,7 @@ $lattice-map: (
 
 /**
  * Generate Lattice styles
- * @param {string} Breakpoint string value (lg, md, sm, xs)
+ * @param {string} Breakpoint string value (xl, lg, md, sm, xs)
  * @return Lattice styles at the given breakpoint
  */
 @mixin lattice-generate($breakpoint) {
