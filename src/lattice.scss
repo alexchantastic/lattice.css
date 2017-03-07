@@ -1,5 +1,8 @@
 /*! Lattice v1.0.0 | MIT License | https://github.com/alexchantastic/lattice.css */
 
+@import 'variables',
+        'mixins';
+
 .container,
 .grid,
 [class*="grid__col-"] {
@@ -12,14 +15,14 @@
 }
 
 .container {
-  margin-right: auto;
   margin-left: auto;
+  margin-right: auto;
 }
 
 .grid {
+  align-items: flex-start;
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-start;
 }
 
 [class*="grid__col-"] { width: 100%; }

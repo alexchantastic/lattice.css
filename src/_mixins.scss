@@ -3,7 +3,7 @@
  * @return Media query at xlarge screen
  */
 @mixin lattice-screen-xl {
-  @media (min-width: #{map-get(map-get($lattice-map, lg), breakpoint) + 1 }) {
+  @media (min-width: #{map-get(map-get($lattice-map, lg), breakpoint) + 1}) {
     @content;
   }
 }
@@ -34,7 +34,7 @@
  * @return Media query at large screen and larger
  */
 @mixin lattice-screen-lg-min {
-  @media (min-width: #{map-get(map-get($lattice-map, md), breakpoint) + 1 }) {
+  @media (min-width: #{map-get(map-get($lattice-map, md), breakpoint) + 1}) {
     @content;
   }
 }
@@ -96,7 +96,7 @@
  * @return Media query at small screen and larger
  */
 @mixin lattice-screen-sm-min {
-  @media (min-width: #{map-get(map-get($lattice-map, xs), breakpoint) + 1 }) {
+  @media (min-width: #{map-get(map-get($lattice-map, xs), breakpoint) + 1}) {
     @content;
   }
 }
@@ -119,20 +119,20 @@
 @mixin lattice-generate-base($breakpoint) {
   .container {
     max-width: map-get(map-get($lattice-map, $breakpoint), container-width);
-    padding-right: map-get(map-get($lattice-map, $breakpoint), gutter-width);
     padding-left: map-get(map-get($lattice-map, $breakpoint), gutter-width);
+    padding-right: map-get(map-get($lattice-map, $breakpoint), gutter-width);
   }
 
   .container--fluid { max-width: 100%; }
 
   .grid {
-    margin-right: -#{map-get(map-get($lattice-map, $breakpoint), gutter-width)};
     margin-left: -#{map-get(map-get($lattice-map, $breakpoint), gutter-width)};
+    margin-right: -#{map-get(map-get($lattice-map, $breakpoint), gutter-width)};
   }
 
   [class*="grid__col-"] {
-    padding-right: map-get(map-get($lattice-map, $breakpoint), gutter-width);
     padding-left: map-get(map-get($lattice-map, $breakpoint), gutter-width);
+    padding-right: map-get(map-get($lattice-map, $breakpoint), gutter-width);
   }
 }
 
@@ -146,61 +146,56 @@
 
   @if $breakpoint == 'default' {
     $namespace: '';
-  }
-  @else {
+  } @else {
     $namespace: $breakpoint + '-';
   }
 
   /* Grid level utilities */
   // Grid alignment
-  .grid--#{$namespace}center { justify-content: center; }
-  .grid--#{$namespace}justify { justify-content: space-between; }
-  .grid--#{$namespace}left { justify-content: flex-start; }
-  .grid--#{$namespace}right { justify-content: flex-end; }
-  .grid--#{$namespace}top { align-items: flex-start; }
-  .grid--#{$namespace}middle { align-items: center; }
-  .grid--#{$namespace}bottom { align-items: flex-end; }
-  .grid--#{$namespace}stretch { align-items: stretch; }
+  .#{$namespace}grid--center { justify-content: center; }
+  .#{$namespace}grid--justify { justify-content: space-between; }
+  .#{$namespace}grid--left { justify-content: flex-start; }
+  .#{$namespace}grid--right { justify-content: flex-end; }
+  .#{$namespace}grid--top { align-items: flex-start; }
+  .#{$namespace}grid--middle { align-items: center; }
+  .#{$namespace}grid--bottom { align-items: flex-end; }
+  .#{$namespace}grid--stretch { align-items: stretch; }
 
   /* Column level utilities */
   // Column alignment
-  .grid__col--#{$namespace}left {
-    margin-right: auto;
+  .#{$namespace}grid__col--left {
     margin-left: 0;
+    margin-right: auto;
   }
-  .grid__col--#{$namespace}right {
-    margin-right: 0;
+
+  .#{$namespace}grid__col--right {
     margin-left: auto;
+    margin-right: 0;
   }
-  .grid__col--#{$namespace}top { align-self: flex-start; }
-  .grid__col--#{$namespace}middle { align-self: center; }
-  .grid__col--#{$namespace}bottom { align-self: flex-end; }
-  .grid__col--#{$namespace}stretch { align-self: stretch; }
-  .grid__col--#{$namespace}hidden { display: none; }
-  .grid__col--#{$namespace}visible { display: block; }
+
+  .#{$namespace}grid__col--top { align-self: flex-start; }
+  .#{$namespace}grid__col--middle { align-self: center; }
+  .#{$namespace}grid__col--bottom { align-self: flex-end; }
+  .#{$namespace}grid__col--stretch { align-self: stretch; }
+  .#{$namespace}grid__col--hidden { display: none; }
+  .#{$namespace}grid__col--visible { display: block; }
 
   // Column ordering
   @for $i from 1 through 12 {
-    .grid__col--#{$namespace}order-#{$i} { order: #{$i}; }
+    .#{$namespace}grid__col--order-#{$i} { order: #{$i}; }
   }
-  .grid__col--#{$namespace}order-first { order: -1; }
-  .grid__col--#{$namespace}order-last { order: 9999; }
+
+  .#{$namespace}grid__col--order-first { order: -1; }
+  .#{$namespace}grid__col--order-last { order: 9999; }
 
   // Column offsets
   @for $i from 0 through 12 {
-    .grid__col--#{$namespace}offset-#{$i} { margin-left: #{$i / 12 * 100%}; }
-  }
-
-  @if $breakpoint == 'default' {
-    $namespace: '';
-  }
-  @else {
-    $namespace: '-' + $breakpoint;
+    .#{$namespace}grid__col--offset-#{$i} { margin-left: #{$i / 12 * 100%}; }
   }
 
   // Column widths
   @for $i from 1 through 12 {
-    .grid__col#{$namespace}-#{$i} { width: #{$i / 12 * 100%}; }    
+    .#{$namespace}grid__col-#{$i} { width: #{$i / 12 * 100%}; }
   }
 }
 
