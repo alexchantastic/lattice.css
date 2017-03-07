@@ -161,6 +161,11 @@
   .#{$namespace}grid--bottom { align-items: flex-end; }
   .#{$namespace}grid--stretch { align-items: stretch; }
 
+  .grid--no-gutters > [class*="grid__col-"] {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
   /* Column level utilities */
   // Column alignment
   .#{$namespace}grid__col--left {
@@ -177,6 +182,12 @@
   .#{$namespace}grid__col--middle { align-self: center; }
   .#{$namespace}grid__col--bottom { align-self: flex-end; }
   .#{$namespace}grid__col--stretch { align-self: stretch; }
+
+  [class*="grid__col-"].#{$namespace}grid__col--no-gutters {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
   .#{$namespace}grid__col--hidden { display: none; }
   .#{$namespace}grid__col--visible { display: block; }
 

@@ -107,6 +107,7 @@ The `grid` class defines each *row* of the grid.
 * `grid--middle`: Vertically center columns
 * `grid--bottom`: Bottom align columns
 * `grid--stretch`: Stretch columns to the height of the grid element
+* `grid--no-gutters`: Remove gutters from columns
 
 ### Columns
 
@@ -126,6 +127,7 @@ For example, `grid__col-6` will fill 6/12 or half of the space and `grid__col-12
 * `grid__col--middle`: Vertically center the column
 * `grid__col--bottom`: Bottom align the column
 * `grid__col--stretch`: Stretch the column to the height of the grid element
+* `grid__col--no-gutters`: Removes the gutters from the column
 * `grid__col--hidden`: Hide the column
 * `grid__col--visible`: Show the column
 * `grid__col--order-{number}`: Re-order the column based on the `{number}` specified (between 1 and 12)
@@ -195,6 +197,7 @@ For example, to center align all columns within a grid at the small breakpoint y
 * `{namespace}-grid--middle`
 * `{namespace}-grid--bottom`
 * `{namespace}-grid--stretch`
+* `{namespace}-grid--no-gutters`
 
 #### Columns
 
@@ -204,6 +207,7 @@ For example, to center align all columns within a grid at the small breakpoint y
 * `{namespace}-grid__col--middle`
 * `{namespace}-grid__col--bottom`
 * `{namespace}-grid__col--stretch`
+* `{namespace}-grid__col--no-gutters`
 * `{namespace}-grid__col--hidden`
 * `{namespace}-grid__col--visible`
 * `{namespace}-grid__col--order-{number}`
