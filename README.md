@@ -162,9 +162,9 @@ Grids can be nested within one another like so:
 ```
 <div class="container">
   <div class="grid">
-    <div class="grid__col-4 grid__col-md-6 grid__col-sm-max-12">4</div>
-    <div class="grid__col-4 grid__col-md-6 grid__col-sm-max-12">4</div>
-    <div class="grid__col-4 grid__col-md-12 grid__col-sm-max-12">4</div>
+    <div class="grid__col-4 md-grid__col-6 sm-max-grid__col-12">4</div>
+    <div class="grid__col-4 md-grid__col-6 sm-max-grid__col-12">4</div>
+    <div class="grid__col-4 md-grid__col-12 sm-max-grid__col-12">4</div>
   </div>
 </div>
 ```
@@ -183,33 +183,33 @@ Grids can be nested within one another like so:
 
 All column classes have a responsive counterpart based off of the responsive namespaces. Additionally, all grid and column *modifier* classes also have a responsive counterpart based off of the responsive namespaces.
 
-For example, to center align all columns within a grid at the small breakpoint you could use the class `grid--sm-center`.
+For example, to center align all columns within a grid at the small breakpoint you could use the class `sm-grid--center`.
 
 #### Grid
 
-* `grid--{namespace}-center`
-* `grid--{namespace}-justify`
-* `grid--{namespace}-left`
-* `grid--{namespace}-right`
-* `grid--{namespace}-top`
-* `grid--{namespace}-middle`
-* `grid--{namespace}-bottom`
-* `grid--{namespace}-stretch`
+* `{namespace}-grid--center`
+* `{namespace}-grid--justify`
+* `{namespace}-grid--left`
+* `{namespace}-grid--right`
+* `{namespace}-grid--top`
+* `{namespace}-grid--middle`
+* `{namespace}-grid--bottom`
+* `{namespace}-grid--stretch`
 
 #### Columns
 
-* `grid__col--{namespace}-left`
-* `grid__col--{namespace}-right`
-* `grid__col--{namespace}-top`
-* `grid__col--{namespace}-middle`
-* `grid__col--{namespace}-bottom`
-* `grid__col--{namespace}-stretch`
-* `grid__col--{namespace}-hidden`
-* `grid__col--{namespace}-visible`
-* `grid__col--{namespace}-order-{number}`
-* `grid__col--{namespace}-order-first`
-* `grid__col--{namespace}-order-last`
-* `grid__col--{namespace}-offset-{number}`
+* `{namespace}-grid__col--left`
+* `{namespace}-grid__col--right`
+* `{namespace}-grid__col--top`
+* `{namespace}-grid__col--middle`
+* `{namespace}-grid__col--bottom`
+* `{namespace}-grid__col--stretch`
+* `{namespace}-grid__col--hidden`
+* `{namespace}-grid__col--visible`
+* `{namespace}-grid__col--order-{number}`
+* `{namespace}-grid__col--order-first`
+* `{namespace}-grid__col--order-last`
+* `{namespace}-grid__col--offset-{number}`
 
 #### Mixins
 
