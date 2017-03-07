@@ -1,0 +1,57 @@
+$lattice-enable-responsive: true !default;
+
+$lattice-breakpoint-lg: 1200px !default;
+$lattice-breakpoint-md: 992px !default;
+$lattice-breakpoint-sm: 768px !default;
+$lattice-breakpoint-xs: 544px !default;
+
+$lattice-container-width-default: 1140px !default;
+$lattice-container-width-xl: $lattice-container-width-default !default;
+$lattice-container-width-lg: 940px !default;
+$lattice-container-width-md: 720px !default;
+$lattice-container-width-sm: 576px !default;
+$lattice-container-width-xs: 100% !default;
+
+$lattice-gutter-width-default: 15px !default;
+$lattice-gutter-width-xl: $lattice-gutter-width-default !default;
+$lattice-gutter-width-lg: $lattice-gutter-width-default !default;
+$lattice-gutter-width-md: $lattice-gutter-width-default !default;
+$lattice-gutter-width-sm: $lattice-gutter-width-default !default;
+$lattice-gutter-width-xs: $lattice-gutter-width-default !default;
+
+/**
+ * Mapping of all variables used within Lattice
+ * @var breakpoint      {length}            Viewport size to break at
+ * @var container-width {length|percentage} Width of .container at the given screen
+ * @var gutter-width    {length}            Space between each grid column as applied on both sides
+ */
+$lattice-map: (
+  default: (
+    container-width: $lattice-container-width-default,
+    gutter-width: $lattice-gutter-width-default,
+  ),
+  xl: (
+    container-width: $lattice-container-width-xl,
+    gutter-width: $lattice-gutter-width-xl,
+  ),
+  lg: (
+    breakpoint: $lattice-breakpoint-lg,
+    container-width: $lattice-container-width-lg,
+    gutter-width: $lattice-gutter-width-lg,
+  ),
+  md: (
+    breakpoint: $lattice-breakpoint-md,
+    container-width: $lattice-container-width-md,
+    gutter-width: $lattice-gutter-width-md,
+  ),
+  sm: (
+    breakpoint: $lattice-breakpoint-sm,
+    container-width: $lattice-container-width-sm,
+    gutter-width: $lattice-gutter-width-sm,
+  ),
+  xs: (
+    breakpoint: $lattice-breakpoint-xs,
+    container-width: $lattice-container-width-xs,
+    gutter-width: $lattice-gutter-width-xs,
+  )
+);
