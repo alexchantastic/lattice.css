@@ -26,6 +26,12 @@ Lattice is *default first* in that the grid is tuned to whichever viewport size 
 npm install --save-dev lattice.css
 ```
 
+### Yarn
+
+```
+yarn add lattice.css
+```
+
 ### Bower
 
 ```
