@@ -1,10 +1,18 @@
 {
   "name": "lattice.css",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "A responsive flexbox-based CSS grid framework that uses BEM naming conventions.",
-  "keywords": ["grid", "css", "sass", "scss", "responsive"],
+  "keywords": [
+    "grid",
+    "css",
+    "sass",
+    "scss",
+    "responsive"
+  ],
   "homepage": "https://github.com/alexchantastic/lattice.css",
-  "bugs": {"url": "https://github.com/alexchantastic/lattice.css/issues"},
+  "bugs": {
+    "url": "https://github.com/alexchantastic/lattice.css/issues"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/alexchantastic/lattice.css.git"
