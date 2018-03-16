@@ -21,11 +21,11 @@
   "author": "Alex Chan",
   "license": "MIT",
   "devDependencies": {
-    "browser-sync": "^2.12.3",
+    "browser-sync": "^2.23.6",
     "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.0",
-    "gulp-csso": "^1.1.0",
-    "gulp-sass": "^2.3.1",
-    "run-sequence": "^1.1.5"
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-csso": "^3.0.1",
+    "gulp-sass": "^3.1.0",
+    "run-sequence": "^2.2.1"
   }
 }
