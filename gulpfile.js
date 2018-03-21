@@ -8,7 +8,8 @@ var sass = require('gulp-sass'),
     browsersync = require('browser-sync'),
     run = require('run-sequence'),
     stylelint = require('gulp-stylelint'),
-    rename = require('gulp-rename');
+    rename = require('gulp-rename'),
+    sourcemaps = require('gulp-sourcemaps');
 
 var paths = {
   'src': 'src/',
@@ -17,10 +18,12 @@ var paths = {
 
 gulp.task('css', function() {
   return gulp.src(paths.src + '**/*.scss')
+    .pipe(sourcemaps.init())
     .pipe(sass({
       outputStyle: 'expanded'
     }).on('error', sass.logError))
     .pipe(autoprefixer())
+    .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(paths.dist))
     .pipe(browsersync.reload({stream: true}));
 });
