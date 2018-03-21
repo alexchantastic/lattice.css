@@ -10,21 +10,15 @@ Lattice is *default first* in that the grid is tuned to whichever viewport size 
 
 * [Installation](#installation)
 * [Usage](#usage)
-  * [Settings](#settings)
   * [Container](#container)
   * [Grid](#grid)
   * [Columns](#columns)
   * [Nesting](#nesting)
   * [Responsive](#responsive)
+  * [Settings](#settings)
 * [Compatibility](#compatibility)
 
 ## Installation
-
-### NPM
-
-```
-npm install --save-dev lattice.css
-```
 
 ### Yarn
 
@@ -32,60 +26,40 @@ npm install --save-dev lattice.css
 yarn add lattice.css
 ```
 
+### npm
+
+```
+npm install lattice.css
+```
+
 ### Bower
 
 ```
-bower install --save-dev lattice.css
+bower install lattice.css
 ```
 
 ### Download
 
-See [https://raw.githubusercontent.com/alexchantastic/lattice.css/master/dist/lattice.css](https://raw.githubusercontent.com/alexchantastic/lattice.css/master/dist/lattice.css)
+[Download lattice.min.css](https://raw.githubusercontent.com/alexchantastic/lattice.css/master/dist/lattice.min.css)
 
 ## Usage
 
 ```
 <div class="container">
   <div class="grid">
-    <div class="grid__col-4">4</div>
-    <div class="grid__col-4">4</div>
-    <div class="grid__col-4">4</div>
+    <div class="grid__col-4"></div>
+    <div class="grid__col-4"></div>
+    <div class="grid__col-4"></div>
   </div>
 </div>
 ```
 
-### Settings
-
-#### Functionality
-
-* `$lattice-enable-responsive`: Enable responsive classes (default: `true`)
-
-#### Breakpoints
-
-* `$lattice-breakpoint-lg`: Large screen breakpoint (default: `1200px`)
-* `$lattice-breakpoint-md`: Medium screen breakpoint (default: `992px`)
-* `$lattice-breakpoint-sm`: Small screen breakpoint (default: `768px`)
-* `$lattice-breakpoint-xs`: XSmall screen breakpoint (default: `544px`)
-
-**Note:** There is no xlarge screen breakpoint setting as this is automatically calculated from the large screen breakpoint.
-
-#### Container Widths
-
-* `$lattice-container-width-default`: Container default width (default: `1140px`)
-* `$lattice-container-width-xl`: Container width on large screens (default: `1140px`)
-* `$lattice-container-width-lg`: Container width on large screens (default: `940px`)
-* `$lattice-container-width-md`: Container width on medium screens (default: `720px`)
-* `$lattice-container-width-sm`: Container width on small screens (default: `576px`)
-* `$lattice-container-width-xs`: Container width on xsmall screens (default: `100%`)
-
-#### Gutter Widths
-
-* `$lattice-gutter-width-default`: Column gutter default width (default: `15px`)
-* `$lattice-gutter-width-xl`: Column gutter width on large screens (default: `15px`)
-* `$lattice-gutter-width-lg`: Column gutter width on large screens (default: `15px`)
-* `$lattice-gutter-width-md`: Column gutter width on medium screens (default: `15px`)
-* `$lattice-gutter-width-sm`: Column gutter width on small screens (default: `15px`)
-* `$lattice-gutter-width-xs`: Column gutter width on xsmall screens (default: `15px`)
+|                         | Default      | XLarge       | Large        | Medium       | Small        | XSmall       |
+| ----------------------- | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ |
+| **Breakpoint**          | None         | `≥1201`      | `<1200`      | `<992`       | `<768`       | `<544`       |
+| **Max container width** | `1140px`     | `1140px`     | `940px`      | `720px`      | `576px`      | `100%`       |
+| **Class prefix**        | None         | `xl-`        | `lg`         | `md-`        | `sm-`        | `xs-`        |
+| **Gutter width**        | `15px`       | `15px`       | `15px`       | `15px`       | `15px`       | `15px`       | 
 
 ### Container
 
@@ -118,14 +92,55 @@ The `grid` class defines each *row* of the grid.
 ### Columns
 
 ```
+// Specified width column
 <div class="grid__col-{number}"></div>
+
+// Unspecified width column
+<div class="grid__col"></div>
 ```
 
 Lattice is based on a 12 column layout so the total number of column width values should ideally add up to 12.
 
 The `grid__col-{number}` class defines each *column* of the grid. Column widths can be set by using a number between 1 and 12.
 
-For example, `grid__col-6` will fill 6/12 or half of the space and `grid__col-12` will fill 12/12 or 100% of the space.
+```
+// This will use 6/12 or 50% of the space
+<div class="grid">
+  <div class="grid__col-6"></div>
+</div>
+
+// This will use 12/12 or 100% of the space
+<div class="grid">
+  <div class="grid__col-12"></div>
+</div>
+```
+
+Alternatively, you can use the `grid__col` class to define a column that will take as much space as it can. The `grid__col` class will use up as much space as possible before wrapping.
+
+```
+// This will use 100% of the space
+<div class="grid">
+  <div class="grid__col"></div>
+</div>
+
+// Each grid__col will use 50% of the space
+<div class="grid">
+  <div class="grid__col"></div>
+  <div class="grid__col"></div>
+</div>
+```
+
+You can use `grid__col-{number}` and `grid__col` definitions in the same `grid` row.
+
+```
+<div class="grid">
+  // This will use 50% of the space
+  <div class="grid__col-6"></div>
+
+  // This will use the remaining space (i.e., 50%)
+  <div class="grid__col"></div>
+</div>
+```
 
 * `grid__col--left`: Left align the column
 * `grid__col--right`: Right align the column
@@ -150,15 +165,15 @@ Grids can be nested within one another like so:
   <div class="grid">
     <div class="grid__col-6">
       <div class="grid">
-        <div class="grid__col-6">6</div>
-        <div class="grid__col-6">6</div>
+        <div class="grid__col-6"></div>
+        <div class="grid__col-6"></div>
       </div>
     </div>
     <div class="grid__col-6">
       <div class="grid">
-        <div class="grid__col-4">4</div>
-        <div class="grid__col-4">4</div>
-        <div class="grid__col-4">4</div>
+        <div class="grid__col-4"></div>
+        <div class="grid__col-4"></div>
+        <div class="grid__col-4"></div>
       </div>
     </div>
   </div>
@@ -170,24 +185,18 @@ Grids can be nested within one another like so:
 ```
 <div class="container">
   <div class="grid">
-    <div class="grid__col-4 md-grid__col-6 sm-max-grid__col-12">4</div>
-    <div class="grid__col-4 md-grid__col-6 sm-max-grid__col-12">4</div>
-    <div class="grid__col-4 md-grid__col-12 sm-max-grid__col-12">4</div>
+    <div class="grid__col-4 md-grid__col-6 sm-grid__col-12"></div>
+    <div class="grid__col-4 md-grid__col-6 sm-grid__col-12"></div>
+    <div class="grid__col-4 md-grid__col-12"></div>
   </div>
 </div>
 ```
 
-* `xl`: XLarge screens and larger
-* `lg`: Large screens
-* `lg-max`: Large screens and smaller
-* `lg-min`: Large screens and larger
-* `md`: Medium screens
-* `md-max`: Medium screens and smaller
-* `md-min`: Medium screens and larger
-* `sm`: Small screens
-* `sm-max`: Small screens and smaller
-* `sm-min`: Small screens and larger
-* `xs`: XSmall screens and smaller
+* `xl`: XLarge screens
+* `lg`: Large screens and smaller
+* `md`: Medium screens and smaller
+* `sm`: Small screens and smaller
+* `xs`: XSmall screens
 
 All column classes have a responsive counterpart based off of the responsive namespaces. Additionally, all grid and column *modifier* classes also have a responsive counterpart based off of the responsive namespaces.
 
@@ -233,7 +242,7 @@ For example, to center align all columns within a grid at the small breakpoint y
 
 If you are using Lattice with [SASS](http://sass-lang.com/), you can access the built in responsive mixins.
 
-* `lattice-screen-xl`: XLarge screens and larger
+* `lattice-screen-xl`: XLarge screens
 * `lattice-screen-lg`: Large screens
 * `lattice-screen-lg-max`: Large screens and smaller
 * `lattice-screen-lg-min`: Large screens and larger
@@ -243,8 +252,40 @@ If you are using Lattice with [SASS](http://sass-lang.com/), you can access the 
 * `lattice-screen-sm`: Small screens
 * `lattice-screen-sm-max`: Small screens and smaller
 * `lattice-screen-sm-min`: Small screens and larger
-* `lattice-screen-xs`: XSmall screens and smaller
+* `lattice-screen-xs`: XSmall screens
 
+### Settings
+
+#### Functionality
+
+* `$lattice-enable-responsive`: Enable responsive classes (default: `true`)
+
+#### Breakpoints
+
+* `$lattice-breakpoint-lg`: Large screen breakpoint (default: `1200px`)
+* `$lattice-breakpoint-md`: Medium screen breakpoint (default: `992px`)
+* `$lattice-breakpoint-sm`: Small screen breakpoint (default: `768px`)
+* `$lattice-breakpoint-xs`: XSmall screen breakpoint (default: `544px`)
+
+**Note:** There is no xlarge screen breakpoint setting as this is automatically calculated from the large screen breakpoint.
+
+#### Container Widths
+
+* `$lattice-container-width-default`: Container default width (default: `1140px`)
+* `$lattice-container-width-xl`: Container width on large screens (default: `1140px`)
+* `$lattice-container-width-lg`: Container width on large screens (default: `940px`)
+* `$lattice-container-width-md`: Container width on medium screens (default: `720px`)
+* `$lattice-container-width-sm`: Container width on small screens (default: `576px`)
+* `$lattice-container-width-xs`: Container width on xsmall screens (default: `100%`)
+
+#### Gutter Widths
+
+* `$lattice-gutter-width-default`: Column gutter default width (default: `15px`)
+* `$lattice-gutter-width-xl`: Column gutter width on large screens (default: `$lattice-gutter-width-default`)
+* `$lattice-gutter-width-lg`: Column gutter width on large screens (default: `$lattice-gutter-width-default`)
+* `$lattice-gutter-width-md`: Column gutter width on medium screens (default: `$lattice-gutter-width-default`)
+* `$lattice-gutter-width-sm`: Column gutter width on small screens (default: `$lattice-gutter-width-default`)
+* `$lattice-gutter-width-xs`: Column gutter width on xsmall screens (default: `$lattice-gutter-width-default`)
 
 ## Compatibility
 
