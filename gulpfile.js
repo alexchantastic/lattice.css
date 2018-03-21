@@ -2,22 +2,28 @@
 
 var gulp = require('gulp');
 
-var sass = require('gulp-sass'),
-    autoprefixer = require('gulp-autoprefixer'),
-    csso = require('gulp-csso'),
+var autoprefixer = require('gulp-autoprefixer'),
     browsersync = require('browser-sync'),
-    run = require('run-sequence'),
+    csso = require('gulp-csso'),
+    sass = require('gulp-sass'),
+    sourcemaps = require('gulp-sourcemaps'),
     stylelint = require('gulp-stylelint'),
     rename = require('gulp-rename'),
-    sourcemaps = require('gulp-sourcemaps');
+    run = require('run-sequence');
 
 var paths = {
   'src': 'src/',
   'dist': 'dist/'
 };
 
-gulp.task('css', function() {
-  return gulp.src(paths.src + '**/*.scss')
+gulp.task('build', function() {
+  run('scss', 'scss:min');
+});
+
+gulp.task('default', ['build', 'watch']);
+
+gulp.task('scss', function() {
+  return gulp.src(paths.src + 'lattice.scss')
     .pipe(sourcemaps.init())
     .pipe(sass({
       outputStyle: 'expanded'
@@ -28,8 +34,8 @@ gulp.task('css', function() {
     .pipe(browsersync.reload({stream: true}));
 });
 
-gulp.task('minify', function() {
-  return gulp.src(paths.dist + '*.css')
+gulp.task('scss:min', function() {
+  return gulp.src(paths.dist + 'lattice.css')
     .pipe(csso())
     .pipe(rename({
       suffix: '.min'
@@ -47,12 +53,6 @@ gulp.task('server:reload', function() {
   browsersync.reload();
 });
 
-gulp.task('watch', ['server'], function() {
-  gulp.watch(paths.src + '**/*.scss', ['css']);
-
-  gulp.watch('./*.html', ['server:reload']);
-});
-
 gulp.task('lint', function() {
   return gulp.src(paths.src + '**/*.scss')
     .pipe(stylelint({
@@ -63,10 +63,8 @@ gulp.task('lint', function() {
     }));
 });
 
-gulp.task('build', ['css']);
+gulp.task('watch', ['server'], function() {
+  gulp.watch(paths.src + '**/*.scss', ['scss']);
 
-gulp.task('build:dist', function() {
-  run('css', 'minify');
+  gulp.watch('./*.html', ['server:reload']);
 });
-
-gulp.task('default', ['build', 'watch']);
