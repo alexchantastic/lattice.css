@@ -41,38 +41,14 @@
     @include lattice-generate('lg');
   }
 
-  @include lattice-screen-lg-max {
-    @include lattice-generate-grid('lg-max');
-  }
-
-  @include lattice-screen-lg-min {
-    @include lattice-generate-grid('lg-min');
-  }
-
   // Generate styles for medium screens
   @include lattice-screen-md {
     @include lattice-generate('md');
   }
 
-  @include lattice-screen-md-max {
-    @include lattice-generate-grid('md-max');
-  }
-
-  @include lattice-screen-md-min {
-    @include lattice-generate-grid('md-min');
-  }
-
   // Generate styles for small screens
   @include lattice-screen-sm {
     @include lattice-generate('sm');
-  }
-
-  @include lattice-screen-sm-max {
-    @include lattice-generate-grid('sm-max');
-  }
-
-  @include lattice-screen-sm-min {
-    @include lattice-generate-grid('sm-min');
   }
 
   // Generate styles for xsmall screens

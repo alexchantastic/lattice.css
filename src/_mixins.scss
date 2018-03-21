@@ -10,42 +10,10 @@
 
 /**
  * Large screen media query
- * @return Media query at large screen
- */
-@mixin lattice-screen-lg {
-  @media (min-width: #{map-get(map-get($lattice-map, md), breakpoint) + 1}) and
-         (max-width: #{map-get(map-get($lattice-map, lg), breakpoint)}) {
-    @content;
-  }
-}
-
-/**
- * Large screen media query
  * @return Media query at large screen and smaller
  */
-@mixin lattice-screen-lg-max {
+@mixin lattice-screen-lg {
   @media (max-width: #{map-get(map-get($lattice-map, lg), breakpoint)}) {
-    @content;
-  }
-}
-
-/**
- * Large screen media query
- * @return Media query at large screen and larger
- */
-@mixin lattice-screen-lg-min {
-  @media (min-width: #{map-get(map-get($lattice-map, md), breakpoint) + 1}) {
-    @content;
-  }
-}
-
-/**
- * Medium screen media query
- * @return Media query at medium screen
- */
-@mixin lattice-screen-md {
-  @media (min-width: #{map-get(map-get($lattice-map, sm), breakpoint) + 1}) and
-         (max-width: #{map-get(map-get($lattice-map, md), breakpoint)}) {
     @content;
   }
 }
@@ -54,29 +22,8 @@
  * Medium screen media query
  * @return Media query at medium screen and smaller
  */
-@mixin lattice-screen-md-max {
+@mixin lattice-screen-md {
   @media (max-width: #{map-get(map-get($lattice-map, md), breakpoint)}) {
-    @content;
-  }
-}
-
-/**
- * Medium screen media query
- * @return Media query at medium screen and larger
- */
-@mixin lattice-screen-md-min {
-  @media (min-width: #{map-get(map-get($lattice-map, sm), breakpoint) + 1 }) {
-    @content;
-  }
-}
-
-/**
- * Small screen media query
- * @return Media query at small screen
- */
-@mixin lattice-screen-sm {
-  @media (min-width: #{map-get(map-get($lattice-map, xs), breakpoint) + 1}) and
-         (max-width: #{map-get(map-get($lattice-map, sm), breakpoint)}) {
     @content;
   }
 }
@@ -85,18 +32,8 @@
  * Small screen media query
  * @return Media query at small screen and smaller
  */
-@mixin lattice-screen-sm-max {
+@mixin lattice-screen-sm {
   @media (max-width: #{map-get(map-get($lattice-map, sm), breakpoint)}) {
-    @content;
-  }
-}
-
-/**
- * Small screen media query
- * @return Media query at small screen and larger
- */
-@mixin lattice-screen-sm-min {
-  @media (min-width: #{map-get(map-get($lattice-map, xs), breakpoint) + 1}) {
     @content;
   }
 }
