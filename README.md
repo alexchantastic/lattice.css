@@ -236,24 +236,24 @@ For example, to center align all columns within a grid at the small breakpoint y
 ```
 @import 'lattice';
 
-@include lattice-screen-md {
-  body { background: #000; }
+@include lattice-screen-md-only {
+  // Some CSS
 }
 ```
 
 If you are using Lattice with [SASS](http://sass-lang.com/), you can access the built in responsive mixins.
 
-* `lattice-screen-xl`: XLarge screens
-* `lattice-screen-lg`: Large screens
+* `lattice-screen-xl-min`: XLarge screens
+* `lattice-screen-lg-only`: Large screens
 * `lattice-screen-lg-max`: Large screens and smaller
 * `lattice-screen-lg-min`: Large screens and larger
-* `lattice-screen-md`: Medium screens
+* `lattice-screen-md-only`: Medium screens
 * `lattice-screen-md-max`: Medium screens and smaller
 * `lattice-screen-md-min`: Medium screens and larger
-* `lattice-screen-sm`: Small screens
+* `lattice-screen-sm-only`: Small screens
 * `lattice-screen-sm-max`: Small screens and smaller
 * `lattice-screen-sm-min`: Small screens and larger
-* `lattice-screen-xs`: XSmall screens
+* `lattice-screen-xs-max`: XSmall screens
 
 ### Settings
 
