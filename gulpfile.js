@@ -7,7 +7,8 @@ var sass = require('gulp-sass'),
     csso = require('gulp-csso'),
     browsersync = require('browser-sync'),
     run = require('run-sequence'),
-    stylelint = require('gulp-stylelint');
+    stylelint = require('gulp-stylelint'),
+    rename = require('gulp-rename');
 
 var paths = {
   'src': 'src/',
@@ -16,7 +17,9 @@ var paths = {
 
 gulp.task('css', function() {
   return gulp.src(paths.src + '**/*.scss')
-    .pipe(sass().on('error', sass.logError))
+    .pipe(sass({
+      outputStyle: 'expanded'
+    }).on('error', sass.logError))
     .pipe(autoprefixer())
     .pipe(gulp.dest(paths.dist))
     .pipe(browsersync.reload({stream: true}));
@@ -25,6 +28,9 @@ gulp.task('css', function() {
 gulp.task('minify', function() {
   return gulp.src(paths.dist + '*.css')
     .pipe(csso())
+    .pipe(rename({
+      suffix: '.min'
+    }))
     .pipe(gulp.dest(paths.dist));
 });
 
