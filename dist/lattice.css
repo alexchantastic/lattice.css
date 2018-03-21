@@ -84,8 +84,10 @@
   display: flex;
   flex-wrap: wrap; }
 
-.grid__col,
 [class*="grid__col-"] {
+  flex: 0 1 auto; }
+
+.grid__col {
   flex: 1 1 auto; }
 
 .container {

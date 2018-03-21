@@ -27,10 +27,9 @@
   flex-wrap: wrap;
 }
 
-.grid__col,
-[class*="grid__col-"] {
-  flex: 1 1 auto;
-}
+[class*="grid__col-"] { flex: 0 1 auto; }
+
+.grid__col { flex: 1 1 auto; }
 
 // Generate styles for default screens
 @include lattice-generate('default');
