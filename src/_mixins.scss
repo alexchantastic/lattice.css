@@ -2,7 +2,7 @@
  * XLarge screen media query
  * @return Media query at xlarge screen
  */
-@mixin lattice-screen-xl {
+@mixin lattice-xl {
   @media (min-width: #{map-get(map-get($lattice-map, lg), breakpoint) + 1}) {
     @content;
   }
@@ -12,7 +12,7 @@
  * Large screen media query
  * @return Media query at large screen and smaller
  */
-@mixin lattice-screen-lg {
+@mixin lattice-lg {
   @media (max-width: #{map-get(map-get($lattice-map, lg), breakpoint)}) {
     @content;
   }
@@ -22,7 +22,7 @@
  * Medium screen media query
  * @return Media query at medium screen and smaller
  */
-@mixin lattice-screen-md {
+@mixin lattice-md {
   @media (max-width: #{map-get(map-get($lattice-map, md), breakpoint)}) {
     @content;
   }
@@ -32,7 +32,7 @@
  * Small screen media query
  * @return Media query at small screen and smaller
  */
-@mixin lattice-screen-sm {
+@mixin lattice-sm {
   @media (max-width: #{map-get(map-get($lattice-map, sm), breakpoint)}) {
     @content;
   }
@@ -42,7 +42,7 @@
  * XSmall screen media query
  * @return Media query at xsmall screen
  */
-@mixin lattice-screen-xs {
+@mixin lattice-xs {
   @media (max-width: #{map-get(map-get($lattice-map, xs), breakpoint)}) {
     @content;
   }
