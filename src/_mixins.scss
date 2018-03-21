@@ -2,8 +2,19 @@
  * XLarge screen media query
  * @return Media query at xlarge screen
  */
-@mixin lattice-xl {
+ @mixin lattice-screen-xl-min {
   @media (min-width: #{map-get(map-get($lattice-map, lg), breakpoint) + 1}) {
+    @content;
+  }
+}
+
+/**
+ * Large screen media query
+ * @return Media query at large screen
+ */
+@mixin lattice-screen-lg-only {
+  @media (min-width: #{map-get(map-get($lattice-map, md), breakpoint) + 1}) and
+         (max-width: #{map-get(map-get($lattice-map, lg), breakpoint)}) {
     @content;
   }
 }
@@ -12,8 +23,29 @@
  * Large screen media query
  * @return Media query at large screen and smaller
  */
-@mixin lattice-lg {
+@mixin lattice-screen-lg-max {
   @media (max-width: #{map-get(map-get($lattice-map, lg), breakpoint)}) {
+    @content;
+  }
+}
+
+/**
+ * Large screen media query
+ * @return Media query at large screen and larger
+ */
+@mixin lattice-screen-lg-min {
+  @media (min-width: #{map-get(map-get($lattice-map, md), breakpoint) + 1}) {
+    @content;
+  }
+}
+
+/**
+ * Medium screen media query
+ * @return Media query at medium screen
+ */
+@mixin lattice-screen-md-only {
+  @media (min-width: #{map-get(map-get($lattice-map, sm), breakpoint) + 1}) and
+         (max-width: #{map-get(map-get($lattice-map, md), breakpoint)}) {
     @content;
   }
 }
@@ -22,8 +54,29 @@
  * Medium screen media query
  * @return Media query at medium screen and smaller
  */
-@mixin lattice-md {
+@mixin lattice-screen-md-max {
   @media (max-width: #{map-get(map-get($lattice-map, md), breakpoint)}) {
+    @content;
+  }
+}
+
+/**
+ * Medium screen media query
+ * @return Media query at medium screen and larger
+ */
+@mixin lattice-screen-md-min {
+  @media (min-width: #{map-get(map-get($lattice-map, sm), breakpoint) + 1 }) {
+    @content;
+  }
+}
+
+/**
+ * Small screen media query
+ * @return Media query at small screen
+ */
+@mixin lattice-screen-sm-only {
+  @media (min-width: #{map-get(map-get($lattice-map, xs), breakpoint) + 1}) and
+         (max-width: #{map-get(map-get($lattice-map, sm), breakpoint)}) {
     @content;
   }
 }
@@ -32,8 +85,18 @@
  * Small screen media query
  * @return Media query at small screen and smaller
  */
-@mixin lattice-sm {
+@mixin lattice-screen-sm-max {
   @media (max-width: #{map-get(map-get($lattice-map, sm), breakpoint)}) {
+    @content;
+  }
+}
+
+/**
+ * Small screen media query
+ * @return Media query at small screen and larger
+ */
+@mixin lattice-screen-sm-min {
+  @media (min-width: #{map-get(map-get($lattice-map, xs), breakpoint) + 1}) {
     @content;
   }
 }
@@ -42,11 +105,12 @@
  * XSmall screen media query
  * @return Media query at xsmall screen
  */
-@mixin lattice-xs {
+@mixin lattice-screen-xs-max {
   @media (max-width: #{map-get(map-get($lattice-map, xs), breakpoint)}) {
     @content;
   }
 }
+
 
 /**
  * Generate base styles
@@ -67,6 +131,7 @@
     margin-right: -#{map-get(map-get($lattice-map, $breakpoint), gutter-width)};
   }
 
+  .grid__col,
   [class*="grid__col-"] {
     padding-left: map-get(map-get($lattice-map, $breakpoint), gutter-width);
     padding-right: map-get(map-get($lattice-map, $breakpoint), gutter-width);
@@ -98,6 +163,7 @@
   .#{$namespace}grid--bottom { align-items: flex-end; }
   .#{$namespace}grid--stretch { align-items: stretch; }
 
+  .grid--no-gutters > .grid__col,
   .grid--no-gutters > [class*="grid__col-"] {
     padding-left: 0;
     padding-right: 0;
@@ -120,6 +186,7 @@
   .#{$namespace}grid__col--bottom { align-self: flex-end; }
   .#{$namespace}grid__col--stretch { align-self: stretch; }
 
+  .grid__col.#{$namespace}grid__col--no-gutters,
   [class*="grid__col-"].#{$namespace}grid__col--no-gutters {
     padding-left: 0;
     padding-right: 0;
@@ -142,6 +209,8 @@
   }
 
   // Column widths
+  .#{$namespace}grid__col { width: auto; }
+
   @for $i from 1 through 12 {
     .#{$namespace}grid__col-#{$i} { width: #{$i / 12 * 100%}; }
   }
