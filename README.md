@@ -39,7 +39,7 @@ npm install lattice.css
 
 ## Usage
 
-```
+```html
 <div class="container">
   <div class="grid">
     <div class="grid__col-4"></div>
@@ -58,7 +58,7 @@ npm install lattice.css
 
 ### Container
 
-```
+```html
 <div class="container"></div>
 ```
 
@@ -68,7 +68,7 @@ You can use the modifier class `container--fluid` to always have the container b
 
 ### Grid
 
-```
+```html
 <div class="grid"></div>
 ```
 
@@ -86,7 +86,7 @@ The `grid` class defines each *row* of the grid.
 
 ### Columns
 
-```
+```html
 // Specified width column
 <div class="grid__col-{number}"></div>
 
@@ -98,7 +98,7 @@ Lattice is based on a 12 column layout so the total number of column width value
 
 The `grid__col-{number}` class defines each *column* of the grid. Column widths can be set by using a number between 1 and 12.
 
-```
+```html
 // This will use 6/12 or 50% of the space
 <div class="grid">
   <div class="grid__col-6"></div>
@@ -112,7 +112,7 @@ The `grid__col-{number}` class defines each *column* of the grid. Column widths 
 
 Alternatively, you can use the `grid__col` class to define a column that will take as much space as it can. The `grid__col` class will use up as much space as possible before wrapping.
 
-```
+```html
 // This will use 100% of the space
 <div class="grid">
   <div class="grid__col"></div>
@@ -127,7 +127,7 @@ Alternatively, you can use the `grid__col` class to define a column that will ta
 
 You can use `grid__col-{number}` and `grid__col` definitions in the same `grid` row.
 
-```
+```html
 <div class="grid">
   // This will use 50% of the space
   <div class="grid__col-6"></div>
@@ -155,7 +155,7 @@ You can use `grid__col-{number}` and `grid__col` definitions in the same `grid` 
 
 Grids can be nested within one another like so:
 
-```
+```html
 <div class="container">
   <div class="grid">
     <div class="grid__col-6">
@@ -177,7 +177,7 @@ Grids can be nested within one another like so:
 
 ### Responsive
 
-```
+```html
 <div class="container">
   <div class="grid">
     <div class="grid__col-4 md-grid__col-6 sm-grid__col-12"></div>
@@ -227,7 +227,7 @@ For example, to center align all columns within a grid at the small breakpoint y
 
 #### Mixins
 
-```
+```scss
 @import 'lattice';
 
 @include lattice-screen-md-only {
