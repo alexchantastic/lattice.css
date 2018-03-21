@@ -33,12 +33,6 @@ yarn add lattice.css
 npm install lattice.css
 ```
 
-### Bower
-
-```
-bower install lattice.css
-```
-
 ### Download
 
 [Download lattice.min.css](https://raw.githubusercontent.com/alexchantastic/lattice.css/master/dist/lattice.min.css)
