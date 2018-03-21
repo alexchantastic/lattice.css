@@ -1,17 +1,13 @@
-/**
- * XLarge screen media query
- * @return Media query at xlarge screen
- */
+// XLarge screen media query
+// @return Media query at xlarge screen
 @mixin lattice-screen-xl-min {
   @media (min-width: #{map-get(map-get($lattice-map, lg), breakpoint) + 1}) {
     @content;
   }
 }
 
-/**
- * Large screen media query
- * @return Media query at large screen
- */
+// Large screen media query
+// @return Media query at large screen
 @mixin lattice-screen-lg-only {
   @media
     (min-width: #{map-get(map-get($lattice-map, md), breakpoint) + 1}) and
@@ -20,30 +16,24 @@
   }
 }
 
-/**
- * Large screen media query
- * @return Media query at large screen and smaller
- */
+// Large screen media query
+// @return Media query at large screen and smaller
 @mixin lattice-screen-lg-max {
   @media (max-width: #{map-get(map-get($lattice-map, lg), breakpoint)}) {
     @content;
   }
 }
 
-/**
- * Large screen media query
- * @return Media query at large screen and larger
- */
+// Large screen media query
+// @return Media query at large screen and larger
 @mixin lattice-screen-lg-min {
   @media (min-width: #{map-get(map-get($lattice-map, md), breakpoint) + 1}) {
     @content;
   }
 }
 
-/**
- * Medium screen media query
- * @return Media query at medium screen
- */
+// Medium screen media query
+// @return Media query at medium screen
 @mixin lattice-screen-md-only {
   @media
     (min-width: #{map-get(map-get($lattice-map, sm), breakpoint) + 1}) and
@@ -52,30 +42,24 @@
   }
 }
 
-/**
- * Medium screen media query
- * @return Media query at medium screen and smaller
- */
+// Medium screen media query
+// @return Media query at medium screen and smaller
 @mixin lattice-screen-md-max {
   @media (max-width: #{map-get(map-get($lattice-map, md), breakpoint)}) {
     @content;
   }
 }
 
-/**
- * Medium screen media query
- * @return Media query at medium screen and larger
- */
+// Medium screen media query
+// @return Media query at medium screen and larger
 @mixin lattice-screen-md-min {
   @media (min-width: #{map-get(map-get($lattice-map, sm), breakpoint) + 1 }) {
     @content;
   }
 }
 
-/**
- * Small screen media query
- * @return Media query at small screen
- */
+// Small screen media query
+// @return Media query at small screen
 @mixin lattice-screen-sm-only {
   @media
     (min-width: #{map-get(map-get($lattice-map, xs), breakpoint) + 1}) and
@@ -84,41 +68,33 @@
   }
 }
 
-/**
- * Small screen media query
- * @return Media query at small screen and smaller
- */
+// Small screen media query
+// @return Media query at small screen and smaller
 @mixin lattice-screen-sm-max {
   @media (max-width: #{map-get(map-get($lattice-map, sm), breakpoint)}) {
     @content;
   }
 }
 
-/**
- * Small screen media query
- * @return Media query at small screen and larger
- */
+// Small screen media query
+// @return Media query at small screen and larger
 @mixin lattice-screen-sm-min {
   @media (min-width: #{map-get(map-get($lattice-map, xs), breakpoint) + 1}) {
     @content;
   }
 }
 
-/**
- * XSmall screen media query
- * @return Media query at xsmall screen
- */
+// XSmall screen media query
+// @return Media query at xsmall screen
 @mixin lattice-screen-xs-max {
   @media (max-width: #{map-get(map-get($lattice-map, xs), breakpoint)}) {
     @content;
   }
 }
 
-/**
- * Generate base styles
- * @param {string} Breakpoint string value (xl, lg, md, sm, xs)
- * @return Base styles at the given breakpoint
- */
+// Generate base styles
+// @param {string} Breakpoint string value (xl, lg, md, sm, xs)
+// @return Base styles at the given breakpoint
 @mixin lattice-generate-base($breakpoint) {
   .container {
     max-width: map-get(map-get($lattice-map, $breakpoint), container-width);
@@ -142,11 +118,9 @@
   }
 }
 
-/**
- * Generate grid styles
- * @param {string} Breakpoint string value (xl, lg, md, sm, xs)
- * @return Grid styles at the given breakpoint
- */
+// Generate grid styles
+// @param {string} Breakpoint string value (xl, lg, md, sm, xs)
+// @return Grid styles at the given breakpoint
 @mixin lattice-generate-grid($breakpoint) {
   $namespace: 'default';
 
@@ -158,7 +132,7 @@
     $namespace: $breakpoint + '-';
   }
 
-  /* Grid level utilities */
+  // Grid level utilities
   // Grid alignment
   .#{$namespace}grid--center {
     justify-content: center;
@@ -198,7 +172,7 @@
     padding-left: 0;
   }
 
-  /* Column level utilities */
+  // Column level utilities
   // Column alignment
   .#{$namespace}grid__col--left {
     margin-right: auto;
@@ -274,11 +248,9 @@
   }
 }
 
-/**
- * Generate Lattice styles
- * @param {string} Breakpoint string value (xl, lg, md, sm, xs)
- * @return Lattice styles at the given breakpoint
- */
+// Generate Lattice styles
+// @param {string} Breakpoint string value (xl, lg, md, sm, xs)
+// @return Lattice styles at the given breakpoint
 @mixin lattice-generate($breakpoint) {
   @include lattice-generate-base($breakpoint);
   @include lattice-generate-grid($breakpoint);

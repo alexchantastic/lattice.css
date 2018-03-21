@@ -1,69 +1,4 @@
 /*! Lattice v1.0.0 | MIT License | https://github.com/alexchantastic/lattice.css */
-/**
- * Mapping of all variables used within Lattice
- * @var breakpoint      {length}            Viewport size to break at
- * @var container-width {length|percentage} Width of .container at the given screen
- * @var gutter-width    {length}            Space between each grid column as applied on both sides
- */
-/**
- * XLarge screen media query
- * @return Media query at xlarge screen
- */
-/**
- * Large screen media query
- * @return Media query at large screen
- */
-/**
- * Large screen media query
- * @return Media query at large screen and smaller
- */
-/**
- * Large screen media query
- * @return Media query at large screen and larger
- */
-/**
- * Medium screen media query
- * @return Media query at medium screen
- */
-/**
- * Medium screen media query
- * @return Media query at medium screen and smaller
- */
-/**
- * Medium screen media query
- * @return Media query at medium screen and larger
- */
-/**
- * Small screen media query
- * @return Media query at small screen
- */
-/**
- * Small screen media query
- * @return Media query at small screen and smaller
- */
-/**
- * Small screen media query
- * @return Media query at small screen and larger
- */
-/**
- * XSmall screen media query
- * @return Media query at xsmall screen
- */
-/**
- * Generate base styles
- * @param {string} Breakpoint string value (xl, lg, md, sm, xs)
- * @return Base styles at the given breakpoint
- */
-/**
- * Generate grid styles
- * @param {string} Breakpoint string value (xl, lg, md, sm, xs)
- * @return Grid styles at the given breakpoint
- */
-/**
- * Generate Lattice styles
- * @param {string} Breakpoint string value (xl, lg, md, sm, xs)
- * @return Lattice styles at the given breakpoint
- */
 .container,
 .grid,
 .grid__col,
@@ -117,7 +52,6 @@
   padding-left: 15px;
 }
 
-/* Grid level utilities */
 .grid--center {
   justify-content: center;
 }
@@ -156,7 +90,6 @@
   padding-left: 0;
 }
 
-/* Column level utilities */
 .grid__col--left {
   margin-right: auto;
   margin-left: 0;
@@ -375,7 +308,6 @@
     padding-right: 15px;
     padding-left: 15px;
   }
-  /* Grid level utilities */
   .xl-grid--center {
     justify-content: center;
   }
@@ -405,7 +337,6 @@
     padding-right: 0;
     padding-left: 0;
   }
-  /* Column level utilities */
   .xl-grid__col--left {
     margin-right: auto;
     margin-left: 0;
@@ -577,7 +508,6 @@
     padding-right: 15px;
     padding-left: 15px;
   }
-  /* Grid level utilities */
   .lg-grid--center {
     justify-content: center;
   }
@@ -607,7 +537,6 @@
     padding-right: 0;
     padding-left: 0;
   }
-  /* Column level utilities */
   .lg-grid__col--left {
     margin-right: auto;
     margin-left: 0;
@@ -779,7 +708,6 @@
     padding-right: 15px;
     padding-left: 15px;
   }
-  /* Grid level utilities */
   .md-grid--center {
     justify-content: center;
   }
@@ -809,7 +737,6 @@
     padding-right: 0;
     padding-left: 0;
   }
-  /* Column level utilities */
   .md-grid__col--left {
     margin-right: auto;
     margin-left: 0;
@@ -981,7 +908,6 @@
     padding-right: 15px;
     padding-left: 15px;
   }
-  /* Grid level utilities */
   .sm-grid--center {
     justify-content: center;
   }
@@ -1011,7 +937,6 @@
     padding-right: 0;
     padding-left: 0;
   }
-  /* Column level utilities */
   .sm-grid__col--left {
     margin-right: auto;
     margin-left: 0;
@@ -1183,7 +1108,6 @@
     padding-right: 15px;
     padding-left: 15px;
   }
-  /* Grid level utilities */
   .xs-grid--center {
     justify-content: center;
   }
@@ -1213,7 +1137,6 @@
     padding-right: 0;
     padding-left: 0;
   }
-  /* Column level utilities */
   .xs-grid__col--left {
     margin-right: auto;
     margin-left: 0;

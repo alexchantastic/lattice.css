@@ -19,12 +19,10 @@ $lattice-gutter-width-md: $lattice-gutter-width-default !default;
 $lattice-gutter-width-sm: $lattice-gutter-width-default !default;
 $lattice-gutter-width-xs: $lattice-gutter-width-default !default;
 
-/**
- * Mapping of all variables used within Lattice
- * @var breakpoint      {length}            Viewport size to break at
- * @var container-width {length|percentage} Width of .container at the given screen
- * @var gutter-width    {length}            Space between each grid column as applied on both sides
- */
+// Mapping of all variables used within Lattice
+// @var breakpoint      {length}            Viewport size to break at
+// @var container-width {length|percentage} Width of .container at the given screen
+// @var gutter-width    {length}            Space between each grid column as applied on both sides
 $lattice-map: (
   default: (
     container-width: $lattice-container-width-default,
