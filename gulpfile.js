@@ -6,7 +6,8 @@ var sass = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
     csso = require('gulp-csso'),
     browsersync = require('browser-sync'),
-    run = require('run-sequence');
+    run = require('run-sequence'),
+    stylelint = require('gulp-stylelint');
 
 var paths = {
   'src': 'src/',
@@ -41,6 +42,16 @@ gulp.task('watch', ['server'], function() {
   gulp.watch(paths.src + '**/*.scss', ['css']);
 
   gulp.watch('./*.html', ['server:reload']);
+});
+
+gulp.task('lint', function() {
+  return gulp.src(paths.src + '**/*.scss')
+    .pipe(stylelint({
+      reporters: [{
+        formatter: 'string',
+        console: true
+      }]
+    }));
 });
 
 gulp.task('build', ['css']);
