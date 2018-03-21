@@ -17,6 +17,7 @@ Lattice is *default first* in that the grid is tuned to whichever viewport size 
   * [Responsive](#responsive)
   * [Settings](#settings)
 * [Compatibility](#compatibility)
+* [License](#license)
 
 ## Installation
 
@@ -298,3 +299,6 @@ Lattice is compatible wherever the flexbox specification has been implemented.
 * Internet Explorer 10+
 
 For a more comprehensive list, see [http://caniuse.com/#feat=flexbox](http://caniuse.com/#feat=flexbox).
+
+## License
+Code released under the [MIT License](https://github.com/alexchantastic/lattice.css/blob/master/LICENSE).
