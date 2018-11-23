@@ -17,7 +17,15 @@
     "type": "git",
     "url": "https://github.com/alexchantastic/lattice.css.git"
   },
-  "main": "src/lattice.scss",
+  "main": "dist/lattice.css",
+  "module": "src/lattice.scss",
+  "style": "dist/lattice.css",
+  "sass": "src/lattice.scss",
+  "unpkg": "dist/lattice.min.css",
+  "files": [
+    "dist",
+    "src"
+  ],
   "author": "Alex Chan",
   "license": "MIT",
   "devDependencies": {
