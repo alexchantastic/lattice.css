@@ -1,0 +1,79 @@
+@mixin lattice-generate-spacing($prefix, $suffix, $size) {
+  .#{$prefix}margin-#{$suffix} { margin: $size !important; }
+
+  .#{$prefix}margin-v-#{$suffix} {
+    margin-top: $size !important;
+    margin-bottom: $size !important;
+  }
+
+  .#{$prefix}margin-h-#{$suffix} {
+    margin-right: $size !important;
+    margin-left: $size !important;
+  }
+
+  .#{$prefix}margin-t-#{$suffix} { margin-top: $size !important; }
+
+  .#{$prefix}margin-r-#{$suffix} { margin-right: $size !important; }
+
+  .#{$prefix}margin-b-#{$suffix} { margin-bottom: $size !important; }
+
+  .#{$prefix}margin-l-#{$suffix} { margin-left: $size !important; }
+
+  .#{$prefix}padding-#{$suffix} { padding: $size !important; }
+
+  .#{$prefix}padding-v-#{$suffix} {
+    padding-top: $size !important;
+    padding-bottom: $size !important;
+  }
+
+  .#{$prefix}padding-h-#{$suffix} {
+    padding-right: $size !important;
+    padding-left: $size !important;
+  }
+
+  .#{$prefix}padding-t-#{$suffix} { padding-top: $size !important; }
+
+  .#{$prefix}padding-r-#{$suffix} { padding-right: $size !important; }
+
+  .#{$prefix}padding-b-#{$suffix} { padding-bottom: $size !important; }
+
+  .#{$prefix}padding-l-#{$suffix} { padding-left: $size !important; }
+}
+
+@mixin lattice-generate-display($prefix) {
+  .#{$prefix}hidden { display: none !important; }
+  .#{$prefix}visible { display: block !important; }
+  .#{$prefix}visible-flex { display: flex !important; }
+  .#{$prefix}visible-inline-flex { display: inline-flex !important; }
+  .#{$prefix}visible-inline { display: inline !important; }
+  .#{$prefix}visible-inline-block { display: inline-block !important; }
+}
+
+@mixin lattice-generate-text-align($prefix) {
+  .#{$prefix}text-right { text-align: right !important; }
+  .#{$prefix}text-left { text-align: left !important; }
+  .#{$prefix}text-center { text-align: center !important; }
+}
+
+@mixin lattice-generate-utils($breakpoint) {
+  $namespace: 'default';
+
+  @if $breakpoint == 'default' {
+    $namespace: '';
+  }
+
+  @else {
+    $namespace: $breakpoint + '-';
+  }
+
+  @include lattice-generate-spacing($namespace, 'none', 0);
+  @include lattice-generate-spacing($namespace, 'xs', $lattice-size-xs);
+  @include lattice-generate-spacing($namespace, 'sm', $lattice-size-sm);
+  @include lattice-generate-spacing($namespace, 'md', $lattice-size-md);
+  @include lattice-generate-spacing($namespace, 'lg', $lattice-size-lg);
+  @include lattice-generate-spacing($namespace, 'xl', $lattice-size-xl);
+
+  @include lattice-generate-display($namespace);
+
+  @include lattice-generate-text-align($namespace);
+}
