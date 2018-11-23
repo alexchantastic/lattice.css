@@ -9,6 +9,7 @@ Lattice is *default first* in that the grid is tuned to whichever viewport size 
 ## Table of Contents
 
 * [Installation](#installation)
+* [Import](#import)
 * [Usage](#usage)
   * [Container](#container)
   * [Grid](#grid)
@@ -37,6 +38,20 @@ npm install lattice.css
 
 [Download lattice.min.css](https://raw.githubusercontent.com/alexchantastic/lattice.css/master/dist/lattice.min.css)
 
+## Import
+
+### CSS / SASS / SCSS
+
+```scss
+@import '~lattice.css';
+```
+
+### JS
+
+```js
+import 'lattice.css';
+```
+
 ## Usage
 
 ```html
@@ -54,7 +69,7 @@ npm install lattice.css
 | **Breakpoint**          | None         | `≥1201`      | `<1200`      | `<992`       | `<768`       | `<544`       |
 | **Max container width** | `1140px`     | `1140px`     | `940px`      | `720px`      | `576px`      | `100%`       |
 | **Class prefix**        | None         | `xl-`        | `lg`         | `md-`        | `sm-`        | `xs-`        |
-| **Gutter width**        | `15px`       | `15px`       | `15px`       | `15px`       | `15px`       | `15px`       | 
+| **Gutter width**        | `15px`       | `15px`       | `15px`       | `15px`       | `15px`       | `15px`       |
 
 ### Container
 
@@ -228,8 +243,6 @@ For example, to center align all columns within a grid at the small breakpoint y
 #### Mixins
 
 ```scss
-@import 'lattice';
-
 @include lattice-screen-md-only {
   // Some CSS
 }
