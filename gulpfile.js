@@ -4,6 +4,7 @@ var gulp = require('gulp');
 
 var autoprefixer = require('gulp-autoprefixer'),
     browsersync = require('browser-sync'),
+    clean = require('gulp-clean'),
     csso = require('gulp-csso'),
     sass = require('gulp-sass'),
     sourcemaps = require('gulp-sourcemaps'),
@@ -16,8 +17,13 @@ var paths = {
   'dist': 'dist/'
 };
 
-gulp.task('build', function() {
-  run('scss', 'scss:min');
+gulp.task('build', ['clean'],function() {
+  return run('scss', 'scss:min');
+});
+
+gulp.task('clean', function() {
+  return gulp.src(paths.dist)
+    .pipe(clean());
 });
 
 gulp.task('default', ['build', 'watch']);
