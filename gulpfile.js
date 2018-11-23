@@ -23,7 +23,7 @@ gulp.task('build', function() {
 gulp.task('default', ['build', 'watch']);
 
 gulp.task('scss', function() {
-  return gulp.src(paths.src + 'lattice.scss')
+  return gulp.src(paths.src + '**/*.scss')
     .pipe(sourcemaps.init())
     .pipe(sass({
       outputStyle: 'expanded'
@@ -35,7 +35,7 @@ gulp.task('scss', function() {
 });
 
 gulp.task('scss:min', function() {
-  return gulp.src(paths.dist + 'lattice.css')
+  return gulp.src(paths.dist + '**/*.css')
     .pipe(csso())
     .pipe(rename({
       suffix: '.min'
