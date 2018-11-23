@@ -34,5 +34,10 @@
     "stylelint-config-recess-order": "^1.2.4",
     "stylelint-config-standard": "^18.2.0",
     "stylelint-scss": "^2.5.0"
+  },
+  "scripts": {
+    "build": "gulp build",
+    "dev": "gulp",
+    "lint": "gulp lint"
   }
 }
