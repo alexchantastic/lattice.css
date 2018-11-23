@@ -1,6 +1,6 @@
 # lattice.css
 
-Lattice is a responsive [flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes)-based CSS grid framework that utilizes [BEM](http://getbem.com/) naming conventions. Lattice is fully-featured and is built with customization in mind.
+Lattice is a responsive [flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes)-based CSS grid library that utilizes [BEM](http://getbem.com/) naming conventions. Lattice is fully-featured and is built with customization in mind.
 
 Lattice is *default first* in that the grid is tuned to whichever viewport size you would prefer to optimize for first.
 
@@ -248,7 +248,7 @@ For example, to center align all columns within a grid at the small breakpoint y
 }
 ```
 
-If you are using Lattice with [SASS](http://sass-lang.com/), you can access the built in responsive mixins.
+If you are using lattice with [SASS](http://sass-lang.com/), you can access the built in responsive mixins.
 
 * `lattice-screen-xl-min`: XLarge screens
 * `lattice-screen-lg-only`: Large screens
@@ -308,4 +308,5 @@ Lattice is compatible wherever the flexbox specification has been implemented.
 For a more comprehensive list, see [http://caniuse.com/#feat=flexbox](http://caniuse.com/#feat=flexbox).
 
 ## License
+
 Code released under the [MIT License](https://github.com/alexchantastic/lattice.css/blob/master/LICENSE).
