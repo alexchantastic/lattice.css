@@ -1,3 +1,8 @@
+// Generate spacing styles
+// @param {string} $prefix - Class name prefix
+// @param {string} $suffix - Class name suffix
+// @param {value} $size - Spacing size CSS value
+// @return Spacing styles
 @mixin lattice-generate-spacing($prefix, $suffix, $size) {
   .#{$prefix}margin-#{$suffix} { margin: $size !important; }
 
@@ -40,6 +45,9 @@
   .#{$prefix}padding-l-#{$suffix} { padding-left: $size !important; }
 }
 
+// Generate display styles
+// @param {string} $prefix - Class name prefix
+// @return Display styles
 @mixin lattice-generate-display($prefix) {
   .#{$prefix}hidden { display: none !important; }
   .#{$prefix}visible { display: block !important; }
@@ -49,12 +57,18 @@
   .#{$prefix}visible-inline-block { display: inline-block !important; }
 }
 
+// Generate text alignment styles
+// @param {string} $prefix - Class name prefix
+// @return Text alignment styles
 @mixin lattice-generate-text-align($prefix) {
   .#{$prefix}text-right { text-align: right !important; }
   .#{$prefix}text-left { text-align: left !important; }
   .#{$prefix}text-center { text-align: center !important; }
 }
 
+// Generate util styles
+// @param {string} Breakpoint string value (xl, lg, md, sm, xs)
+// @return Util styles at the given breakpoint
 @mixin lattice-generate-utils($breakpoint) {
   $namespace: 'default';
 
